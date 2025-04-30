@@ -21,6 +21,133 @@
      <link rel="stylesheet" href="assets/css/main.css">
 
 
+     <style>
+      /* Cultural Gallery Styles */
+      :root {
+          --primary-green: #2e7d32; /* Landscape green */
+          --earth-brown: #6d4c41; /* Traditional attire */
+          --accent-yellow: #ffb300; /* Cultural vibrancy */
+          --white: #fff;
+          --gray: #f5f5f5;
+      }
+
+      .culture-gallery {
+          background: linear-gradient(to bottom, var(--gray), var(--white));
+          padding: 4rem 0;
+      }
+
+      .culture-gallery h2 {
+          font-size: 2.5rem;
+          color: var(--earth-brown);
+          margin-bottom: 1rem;
+          font-weight: bold;
+      }
+
+      .culture-gallery .lead {
+          font-size: 1.2rem;
+          color: #555;
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 1.5rem;
+      }
+
+      .gallery-item {
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+          transform: scale(1.05);
+      }
+
+      .gallery-caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.7);
+          color: var(--white);
+          padding: 1rem;
+          text-align: center;
+          font-size: 1rem;
+          transform: translateY(100%);
+          transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-caption {
+          transform: translateY(0);
+      }
+
+      .gallery-btn {
+          display: inline-block;
+          padding: 0.8rem 2rem;
+          background: var(--primary-green);
+          color: var(--white);
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .gallery-btn:hover {
+          background: var(--accent-yellow);
+          color: var(--earth-brown);
+          transform: scale(1.05);
+      }
+
+      /* PhotoSwipe Custom Styles */
+      .pswp__caption__center {
+          color: var(--white);
+          font-size: 1rem;
+          text-align: center;
+      }
+
+      @media (max-width: 768px) {
+          .culture-gallery h2 {
+              font-size: 2rem;
+          }
+
+          .gallery-item img {
+              height: 250px;
+          }
+
+          .gallery-caption {
+              font-size: 0.9rem;
+              padding: 0.8rem;
+          }
+      }
+
+      @media (max-width: 576px) {
+          .gallery-grid {
+              grid-template-columns: 1fr;
+          }
+
+          .gallery-item img {
+              height: 200px;
+          }
+      }
+  </style>
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
@@ -156,17 +283,12 @@
 
                 <!-- Community Menu -->
                 <li class="dropdown-menu-parrent"><a href="#">Community <i class="fa-solid fa-angle-down"></i></a>
-                  <ul>
-                    <li><a href="blog-details.html">Education</a></li>
-                    <li><a href="blog-details-right.html">Sports</a></li>
-                    <li><a href="blog-details-left2.html">ICT Hubs</a></li>
-                    <li><a href="blog-details-right2.html">Lifestyle</a></li>
-                    <li><a href="blog-details2.html">News & Events</a></li>
-                    <li><a href="project-details.html">Industries & Benefits</a></li>
-                    <li><a href="project-details2.html">Population Dynamics</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="error.html">Get Involved</a></li>
-                  </ul>
+                    <ul class="sub-menu">
+    <li><a href="blog-details.html">Education</a></li>
+    <li><a href="blog-details-right.html">Sports</a></li>
+    <li><a href="blog-details-right2.html">Lifestyle</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
                 </li>
               </ul>
             </div>
@@ -253,16 +375,11 @@
         <!-- Community Menu -->
         <li class="has-dropdown"><a href="#">Community <i class="fa-solid fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li><a href="blog-details.html">Education</a></li>
-            <li><a href="blog-details-right.html">Sports</a></li>
-            <li><a href="blog-details-left2.html">ICT Hubs</a></li>
-            <li><a href="blog-details-right2.html">Lifestyle</a></li>
-            <li><a href="blog-details2.html">News & Events</a></li>
-            <li><a href="project-details.html">Industries & Benefits</a></li>
-            <li><a href="project-details2.html">Population Dynamics</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="error.html">Get Involved</a></li>
-          </ul>
+    <li><a href="blog-details.html">Education</a></li>
+    <li><a href="blog-details-right.html">Sports</a></li>
+    <li><a href="blog-details-right2.html">Lifestyle</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
         </li>
       </ul>
 
@@ -440,166 +557,658 @@
                 </section>
 
 
-        <!--=====PROJECT BOXS START=======-->
+       <!--===== CULTURAL HERITAGE AREA START =======-->
+<div class="culture-heritage-area sp">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-10 m-auto">
+              <!-- Hero Section for Cultural Heritage -->
+              <div class="culture-hero text-center">
+                  <h1>The Rhythmic Soul of Lango</h1>
+                  <p class="lead">Exploring the vibrant dances, captivating music, and timeless folk stories that define Lango's cultural identity</p>
+                  <div class="culture-nav">
+                      <a href="#dances" class="culture-nav-item active">Traditional Dances</a>
+                      <a href="#music" class="culture-nav-item">Music & Instruments</a>
+                      <a href="#stories" class="culture-nav-item">Folk Stories & Proverbs</a>
+                  </div>
+              </div>
 
-        <div class="project-boxs-area sp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img1.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
+              <!-- Traditional Dances Section -->
+              <section id="dances" class="culture-section">
+                  <div class="row align-items-center">
+                      <div class="col-lg-6">
+                          <div class="culture-media">
+                              <img src="assets/img/lango-dance.jpg" alt="Lango traditional dance performance" class="img-fluid rounded">
+                              <div class="media-caption">Okeme dance performed during cultural festivals</div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="culture-content">
+                              <h2>Traditional Dances of Lango</h2>
+                              <p>The Lango people express their joy, history, and social values through dynamic traditional dances that have been passed down through generations. These dances are performed during weddings, initiation ceremonies, and cultural festivals.</p>
+                              
+                              <div class="dance-types">
+                                  <div class="dance-item">
+                                      <h4><i class="fas fa-child-dress"></i> Okeme Dance</h4>
+                                      <p>A vigorous dance performed by young warriors, characterized by high jumps and energetic movements that showcase strength and agility.</p>
+                                  </div>
+                                  <div class="dance-item">
+                                      <h4><i class="fas fa-people-group"></i> Abuda Dance</h4>
+                                      <p>A communal dance performed in circles, often during weddings and celebrations, symbolizing unity and social cohesion.</p>
+                                  </div>
+                                  <div class="dance-item">
+                                      <h4><i class="fas fa-moon"></i> Apiti Dance</h4>
+                                      <p>A ceremonial dance performed during initiation rites and harvest celebrations, featuring rhythmic footwork and symbolic gestures.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img2.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
+              <!-- Music & Instruments Section -->
+              <section id="music" class="culture-section bg-light">
+                  <div class="row align-items-center">
+                      <div class="col-lg-6 order-lg-2">
+                          <div class="culture-media">
+                              <img src="assets/img/lango-instruments.jpg" alt="Traditional Lango musical instruments" class="img-fluid rounded">
+                              <div class="media-caption">Traditional thumb piano (adungu) and drums</div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 order-lg-1">
+                          <div class="culture-content">
+                              <h2>Musical Heritage</h2>
+                              <p>Music is the heartbeat of Lango culture, accompanying every significant life event from birth to death. The traditional instruments produce unique sounds that carry the stories of the people.</p>
+                              
+                              <div class="music-features">
+                                  <div class="feature-box">
+                                      <div class="feature-icon">
+                                          <i class="fas fa-drum"></i>
+                                      </div>
+                                      <div class="feature-text">
+                                          <h5>Drums (Nanga)</h5>
+                                          <p>The sacred drums are considered the voice of the ancestors and are played during important ceremonies.</p>
+                                      </div>
+                                  </div>
+                                  <div class="feature-box">
+                                      <div class="feature-icon">
+                                          <i class="fas fa-music"></i>
+                                      </div>
+                                      <div class="feature-text">
+                                          <h5>Thumb Piano (Adungu)</h5>
+                                          <p>A melodic instrument made with metal tines attached to a wooden board, producing enchanting sounds.</p>
+                                      </div>
+                                  </div>
+                                  <div class="feature-box">
+                                      <div class="feature-icon">
+                                          <i class="fas fa-bullhorn"></i>
+                                      </div>
+                                      <div class="feature-text">
+                                          <h5>Horns (Alero)</h5>
+                                          <p>Animal horns used to communicate messages across distances and during special ceremonies.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                              <div class="audio-sample mt-4">
+                                  <h5>Listen to Traditional Lango Music</h5>
+                                  <audio controls class="w-100">
+                                      <source src="assets/audio/lango-music-sample.mp3" type="audio/mpeg">
+                                      Your browser does not support the audio element.
+                                  </audio>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img3.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
+              <!-- Folk Stories Section -->
+              <section id="stories" class="culture-section">
+                  <div class="row">
+                      <div class="col-lg-12 text-center">
+                          <h2>Wisdom Through Generations</h2>
+                          <p class="lead">Lango folk stories and proverbs have been the traditional method of teaching morals, history, and survival skills to younger generations.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="row mt-5">
+                      <div class="col-lg-6">
+                          <div class="story-card">
+                              <div class="story-header">
+                                  <h4>The Hare and the Elephant</h4>
+                                  <div class="story-type">Folk Tale</div>
+                              </div>
+                              <div class="story-content">
+                                  <p>This popular tale tells how the small but clever hare outwitted the mighty elephant, teaching the value of intelligence over brute strength. The story is often told to children to encourage creative problem-solving.</p>
+                                  <blockquote>
+                                      "Size does not determine wisdom, just as the grass does not measure the rain."
+                                      <footer>- Lango Proverb</footer>
+                                  </blockquote>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="col-lg-6">
+                          <div class="story-card">
+                              <div class="story-header">
+                                  <h4>Common Lango Proverbs</h4>
+                                  <div class="story-type">Wisdom Sayings</div>
+                              </div>
+                              <div class="story-content">
+                                  <ul class="proverb-list">
+                                      <li>"A single stick cannot make a fire." <span>(Unity is strength)</span></li>
+                                      <li>"The eye that wanders will see wonders." <span>(Be observant)</span></li>
+                                      <li>"A child who does not listen will cut his finger on a sharp knife." <span>(Heed advice)</span></li>
+                                      <li>"The river does not flow backward." <span>(Life moves forward)</span></li>
+                                      <li>"When elephants fight, it is the grass that suffers." <span>(Innocent bystanders suffer in conflicts)</span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="row mt-4">
+                      <div class="col-lg-12">
+                          <div class="story-telling">
+                              <h4>Oral Tradition Preservation</h4>
+                              <p>The Lango people have maintained their history and values through an unbroken chain of oral tradition. Elders (wang tic) are respected as custodians of this knowledge, gathering children around evening fires to share stories that teach:</p>
+                              <div class="tradition-values">
+                                  <span>Respect for elders</span>
+                                  <span>Community harmony</span>
+                                  <span>Courage in adversity</span>
+                                  <span>Importance of hard work</span>
+                                  <span>Connection to nature</span>
+                              </div>
+                              <div class="text-center mt-4">
+                                  <a href="#" class="btn btn-primary">Explore More Stories</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+          </div>
+      </div>
+  </div>
+</div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img4.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
+<!--===== CULTURAL HERITAGE AREA END =======-->
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img5.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img6.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img7.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img8.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-page-box">
-                            <div class="image">
-                                <img src="assets/img/others/project-page-img9.png" alt="">
-                            </div>
-                            <div class="heading2">
-                                <h4><a href="project-details.html">Enterprise Resource Planning Implementation</a></h4>
-                                <a href="project-details.html" class="learn">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="space30"></div>
-                        <div class="row">
-                            <div class="col-12 m-auto">
-                                <div class="theme-pagination text-center">
-                                <ul>
-                                    <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                                    <li><a class="active" href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li>...</li>
-                                    <li><a href="#">12</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-
+  <!--===== CULTURAL GALLERY START =======-->
+  <div class="culture-gallery bg-light sp">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto text-center">
+                <h2>Celebrating Lango’s Cultural Heritage</h2>
+                <p class="lead">Immerse yourself in the vibrant traditions of Lango through captivating moments captured in our cultural gallery.</p>
             </div>
         </div>
 
-        <!--=====PROJECT BOXS END=======-->
+        <div class="row gallery-grid mt-5" id="gallery">
+            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/dance-performance.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="assets/img/gallery/dance-performance.jpg" alt="Lango Okeme dance performance" class="img-fluid">
+                <div class="gallery-caption">Okeme dance at a cultural festival</div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/musicians.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="assets/img/gallery/musicians.jpg" alt="Lango traditional musicians" class="img-fluid">
+                <div class="gallery-caption">Elders playing traditional adungu instruments</div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/story-telling.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="assets/img/gallery/story-telling.jpg" alt="Elder storytelling in Lango" class="img-fluid">
+                <div class="gallery-caption">Storytelling session with Lango youth</div>
+            </div>
+            <div class="col-lg-6 col-md-6 gallery-item" data-src="assets/img/gallery/wedding-dance.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="assets/img/gallery/wedding-dance.jpg" alt="Lango wedding dance" class="img-fluid">
+                <div class="gallery-caption">Abuda dance at a traditional wedding</div>
+            </div>
+            <div class="col-lg-6 col-md-12 gallery-item" data-src="assets/img/gallery/festival.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="assets/img/gallery/festival.jpg" alt="Lango cultural festival" class="img-fluid">
+                <div class="gallery-caption">Annual Lango cultural festival gathering</div>
+            </div>
+        </div>
 
-                          <!--=====CTA AREA START=======-->
+        <div class="text-center mt-5">
+            <a href="full-gallery.html" class="gallery-btn">Explore Full Gallery</a>
+        </div>
+    </div>
+</div>
+<!--===== CULTURAL GALLERY END =======-->
 
-                          <div class="cta">
-                            <div class="container">
-                              <div class="row align-items-center">
-                                <div class="col-lg-7">
-                                  <div class="heading1-w">
-                                    <h2>At TechXen IT Solutions, We're Committed To Businesses</h2>
-                                    <div class="space16"></div>
-                                    <p>Take the first step towards achieving your business goals by contacting us today. Schedule a consultation with one of our IT specialists to discuss your objectives and explore how our innovative solutions can propel.</p>
-                                  </div>
-                                </div>
-                  
-                                <div class="col-lg-5">
-                                  <div class="buttons">
-                                    <a class="cta-btn1" href="service.html">Request a Consultaion <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                    <a class="cta-btn2" href="service.html">Explore Solution <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                  
-                          <!--=====CTA AREA END=======-->
+<!-- Footer (Include your existing footer here) -->
+<!-- <footer>...</footer> -->
+
+<!-- PhotoSwipe JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.2/photoswipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.2/photoswipe-lightbox.min.js"></script>
+<script>
+    // Initialize PhotoSwipe Lightbox
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gallery',
+        children: '.gallery-item',
+        pswpModule: PhotoSwipe
+    });
+    lightbox.init();
+</script>
+<!-- Custom JS (Add any additional scripts if needed) -->
+<script src="assets/js/scripts.js"></script>
+
+<style>
+/* General Styles */
+.culture-heritage-area {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.culture-hero {
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/img/lango-pattern.png');
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.culture-hero h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.culture-hero .lead {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.culture-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.culture-nav-item {
+  padding: 0.8rem 1.5rem;
+  background: #e67e22;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.culture-nav-item:hover, .culture-nav-item.active {
+  background: #d35400;
+  transform: translateY(-3px);
+}
+
+/* Section Styles */
+.culture-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.bg-light {
+  background-color: #f9f9f9;
+}
+
+.culture-media {
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.culture-media img {
+  transition: transform 0.5s ease;
+}
+
+.culture-media:hover img {
+  transform: scale(1.03);
+}
+
+.media-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.culture-content h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Dance Styles */
+.dance-types {
+  margin-top: 2rem;
+}
+
+.dance-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid #e67e22;
+}
+
+.dance-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dance-item h4 {
+  color: #e67e22;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.dance-item h4 i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Music Features */
+.music-features {
+  margin-top: 2rem;
+}
+
+.feature-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  background: #e67e22;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.feature-text h5 {
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.feature-text p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.audio-sample {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Story Cards */
+.story-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.story-header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.story-header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.story-type {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #e67e22;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.story-content {
+  padding: 1.5rem;
+}
+
+blockquote {
+  border-left: 4px solid #e67e22;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+blockquote footer {
+  font-style: normal;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.proverb-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.proverb-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.proverb-list li span {
+  font-size: 0.85rem;
+  color: #e67e22;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+/* Tradition Values */
+.tradition-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.tradition-values span {
+  background: #f1f1f1;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Gallery Styles */
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .culture-hero h1 {
+      font-size: 2.2rem;
+  }
+  
+  .culture-content h2 {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .culture-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .culture-nav-item {
+      width: 80%;
+      text-align: center;
+  }
+  
+  .row.align-items-center {
+      flex-direction: column-reverse;
+  }
+  
+  .order-lg-1, .order-lg-2 {
+      order: 0;
+  }
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #e67e22;
+  color: white;
+  border: 2px solid #e67e22;
+}
+
+.btn-primary:hover {
+  background: #d35400;
+  border-color: #d35400;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.btn-outline-primary {
+  border: 2px solid #e67e22;
+  color: #e67e22;
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: #e67e22;
+  color: white;
+}
+</style>
+
+<script>
+// Smooth scrolling for navigation
+document.querySelectorAll('.culture-nav-item').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all items
+      document.querySelectorAll('.culture-nav-item').forEach(item => {
+          item.classList.remove('active');
+      });
+      
+      // Add active class to clicked item
+      this.classList.add('active');
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+      });
+  });
+});
+
+// Activate nav item based on scroll position
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.scrollY;
+  
+  document.querySelectorAll('.culture-section').forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      const sectionId = '#' + section.getAttribute('id');
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          document.querySelectorAll('.culture-nav-item').forEach(item => {
+              item.classList.remove('active');
+              if (item.getAttribute('href') === sectionId) {
+                  item.classList.add('active');
+              }
+          });
+      }
+  });
+});
+</script>
                   
                              <!--===== FOOTER AREA START =======-->
       <div class="footer1 _relative">

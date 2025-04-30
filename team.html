@@ -20,7 +20,65 @@
      <link rel="stylesheet" href="assets/css/mobile-menu.css">
      <link rel="stylesheet" href="assets/css/main.css">
 
+     <style>
+      .prominent-people {
+    background: var(--gray);
+    padding: 3rem 0;
+}
 
+.team-box {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-box:hover {
+    transform: translateY(-10px);
+}
+
+.team-box .image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team-box .heading1 h4 a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.team-box .heading1 h4 a:hover {
+    color: var(--accent-yellow);
+}
+
+.team-box .heading1 p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.team-box .heading1 p strong {
+    color: var(--earth-brown);
+}
+
+@media (max-width: 768px) {
+    .team-box .image img {
+        height: 200px;
+    }
+
+    .team-box .heading1 h4 {
+        font-size: 1.1rem;
+    }
+
+    .team-box .heading1 p {
+        font-size: 0.9rem;
+    }
+}
+     </style>
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
@@ -155,17 +213,12 @@
 
                 <!-- Community Menu -->
                 <li class="dropdown-menu-parrent"><a href="#">Community <i class="fa-solid fa-angle-down"></i></a>
-                  <ul>
-                    <li><a href="blog-details.html">Education</a></li>
-                    <li><a href="blog-details-right.html">Sports</a></li>
-                    <li><a href="blog-details-left2.html">ICT Hubs</a></li>
-                    <li><a href="blog-details-right2.html">Lifestyle</a></li>
-                    <li><a href="blog-details2.html">News & Events</a></li>
-                    <li><a href="project-details.html">Industries & Benefits</a></li>
-                    <li><a href="project-details2.html">Population Dynamics</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="error.html">Get Involved</a></li>
-                  </ul>
+                    <ul class="sub-menu">
+    <li><a href="blog-details.html">Education</a></li>
+    <li><a href="blog-details-right.html">Sports</a></li>
+    <li><a href="blog-details-right2.html">Lifestyle</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
                 </li>
               </ul>
             </div>
@@ -252,16 +305,11 @@
         <!-- Community Menu -->
         <li class="has-dropdown"><a href="#">Community <i class="fa-solid fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li><a href="blog-details.html">Education</a></li>
-            <li><a href="blog-details-right.html">Sports</a></li>
-            <li><a href="blog-details-left2.html">ICT Hubs</a></li>
-            <li><a href="blog-details-right2.html">Lifestyle</a></li>
-            <li><a href="blog-details2.html">News & Events</a></li>
-            <li><a href="project-details.html">Industries & Benefits</a></li>
-            <li><a href="project-details2.html">Population Dynamics</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="error.html">Get Involved</a></li>
-          </ul>
+    <li><a href="blog-details.html">Education</a></li>
+    <li><a href="blog-details-right.html">Sports</a></li>
+    <li><a href="blog-details-right2.html">Lifestyle</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
         </li>
       </ul>
 
@@ -323,472 +371,106 @@
           </div>
         </div>
 
-        <!--=====HERO AREA END=======-->
+       
 
-        <section class="hero10-benar">
-            <div class="container-fluid p-0">
-              <div class="row">
-                <div class="col-12">
-                  <div class="marquee-wrap marquee-wrap-inner">
-                    <div class="marquee-text">
-    
-                      <div class="brand-single-box">
-                      <img src="assets/img/logo/slider-logo1.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo2.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo3.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo4.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo5.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo6.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo7.png" alt="">
-                    </div>
-
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo1.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo2.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo3.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo4.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo5.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo6.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo7.png" alt="">
-                      </div>
-
-                      <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo4.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo5.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo6.png" alt="">
-                    </div>
-    
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo7.png" alt="">
-                    </div>
-
-                    <div class="brand-single-box">
-                        <img src="assets/img/logo/slider-logo1.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo2.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo3.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo4.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo5.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo6.png" alt="">
-                      </div>
-      
-                      <div class="brand-single-box">
-                          <img src="assets/img/logo/slider-logo7.png" alt="">
-                      </div>
-
-    
-                    </div>
-                  </div>
-                </div>
+              <!--=====PROMINENT PEOPLE AREA START=======-->
+<div class="prominent-people team-page sp">
+  <div class="container">
+      <div class="space30"></div>
+      <div class="row">
+          <div class="col-lg-8 m-auto text-center">
+              <div class="heading1">
+                  <h2>Prominent Historical Figures of Lango</h2>
+                  <p>Discover the legendary leaders and warriors who shaped Lango’s history, from guiding migrations to defending the region’s independence.</p>
               </div>
-    
-              <div class="slider-after"></div>
-            </div>
-          </section>
-
-                <!--=====TEAM AREA START=======-->
-
-                <div class="team2 team-page sp">
-                    <div class="container">
-                      <div class="space30"></div>
-                      <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                          <div class="team-box">
-                            <div class="image-area">
-                              <div class="image">
-                                <img src="assets/img/team/team2-img1.png" alt="">
-                              </div>
-                              <div class="icon-area">
-                                <ul>
-                                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
-          
-                            <div class="space30"></div>
-                              <div class="heading1">
-                                <h4><a href="#">John Doe</a></h4>
-                                <div class="space10"></div>
-                                <p>CEO & Founder</p>
-                              </div>
-                          </div>
-                        </div>
-          
-                        <div class="col-lg-3 col-md-6">
-                          <div class="team-box">
-                            <div class="image-area">
-                              <div class="image">
-                                <img src="assets/img/team/team2-img2.png" alt="">
-                              </div>
-                              <div class="icon-area">
-                                <ul>
-                                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
-          
-                            <div class="space30"></div>
-                              <div class="heading1">
-                                <h4><a href="#">Jane Smith</a></h4>
-                                <div class="space10"></div>
-                                <p>Chef Technology Officer</p>
-                              </div>
-          
-                          </div>
-                        </div>
-          
-          
-                        <div class="col-lg-3 col-md-6">
-                          <div class="team-box">
-                            <div class="image-area">
-                              <div class="image">
-                                <img src="assets/img/team/team2-img3.png" alt="">
-                              </div>
-                              <div class="icon-area">
-                                <ul>
-                                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
-          
-                            <div class="space30"></div>
-                              <div class="heading1">
-                                <h4><a href="#">Sarah Thompson </a></h4>
-                                <div class="space10"></div>
-                                <p>Head of Project Management</p>
-                              </div>
-          
-                          </div>
-                        </div>
-          
-                        <div class="col-lg-3 col-md-6">
-                          <div class="team-box">
-                            <div class="image-area">
-                              <div class="image">
-                                <img src="assets/img/team/team2-img4.png" alt="">
-                              </div>
-                              <div class="icon-area">
-                                <ul>
-                                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
-          
-                            <div class="space30"></div>
-                              <div class="heading1">
-                                <h4><a href="#">David Garcia</a></h4>
-                                <div class="space10"></div>
-                                <p>Lead Software Engineer</p>
-                              </div>
-          
-                          </div>
-                        </div>
-
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img5.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">John Doe</a></h4>
-                                  <div class="space10"></div>
-                                  <p>CEO & Founder</p>
-                                </div>
-                            </div>
-                          </div>
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img6.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">Jane Smith</a></h4>
-                                  <div class="space10"></div>
-                                  <p>Chef Technology Officer</p>
-                                </div>
-            
-                            </div>
-                          </div>
-            
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img7.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">Sarah Thompson </a></h4>
-                                  <div class="space10"></div>
-                                  <p>Head of Project Management</p>
-                                </div>
-            
-                            </div>
-                          </div>
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img8.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">David Garcia</a></h4>
-                                  <div class="space10"></div>
-                                  <p>Lead Software Engineer</p>
-                                </div>
-            
-                            </div>
-                          </div>
-
-
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img9.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">John Doe</a></h4>
-                                  <div class="space10"></div>
-                                  <p>CEO & Founder</p>
-                                </div>
-                            </div>
-                          </div>
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img10.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">Jane Smith</a></h4>
-                                  <div class="space10"></div>
-                                  <p>Chef Technology Officer</p>
-                                </div>
-            
-                            </div>
-                          </div>
-            
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img11.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">Sarah Thompson </a></h4>
-                                  <div class="space10"></div>
-                                  <p>Head of Project Management</p>
-                                </div>
-            
-                            </div>
-                          </div>
-            
-                          <div class="col-lg-3 col-md-6">
-                            <div class="team-box">
-                              <div class="image-area">
-                                <div class="image">
-                                  <img src="assets/img/team/team2-img12.png" alt="">
-                                </div>
-                                <div class="icon-area">
-                                  <ul>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-            
-                              <div class="space30"></div>
-                                <div class="heading1">
-                                  <h4><a href="#">David Garcia</a></h4>
-                                  <div class="space10"></div>
-                                  <p>Lead Software Engineerr</p>
-                                </div>
-            
-                            </div>
-                          </div>
-
-          
-          
+          </div>
+      </div>
+      <div class="space30"></div>
+      <div class="row">
+          <!-- Person 1 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="team-box">
+                  <div class="image-area">
+                      <div class="image">
+                          <img src="assets/img/team/acaid.JPG" alt="Illustration of Ongora Okubal">
                       </div>
-
-                      <div class="space60"></div>
-                        <div class="row">
-                            <div class="col-12 m-auto">
-                                <div class="theme-pagination text-center">
-                                <ul>
-                                    <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                                    <li><a class="active" href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li>...</li>
-                                    <li><a href="#">12</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-
-          
-                    </div>
                   </div>
+                  <div class="space30"></div>
+                  <div class="heading1">
+                      <h4><a href="https://en.wikipedia.org/wiki/Lango_people">Ongora Okubal</a></h4>
+                      <div class="space10"></div>
+                      <p>Military Leader</p>
+                      <div class="space10"></div>
+                      <p><strong>Significance:</strong> Led the Lango to their present land in north-central Uganda during the 15th–16th century migrations.</p>
+                      <p><strong>Contributions:</strong> Guided the Lango from Ethiopia through Otuke Hills, establishing their territory and uniting clans against external threats.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Person 2 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="team-box">
+                  <div class="image-area">
+                      <div class="image">
+                        <img src="assets/img/team/acaid.JPG" alt="Illustration of Ongora Okubal">
+                      </div>
+                  </div>
+                  <div class="space30"></div>
+                  <div class="heading1">
+                      <h4><a href="https://ugandatourismcenter.com/langi-people-and-their-culture">Opyene Nyakonyolo</a></h4>
+                      <div class="space10"></div>
+                      <p>Military Leader</p>
+                      <div class="space10"></div>
+                      <p><strong>Significance:</strong> Succeeded Ongora Okubal, strengthening Lango’s territorial control.</p>
+                      <p><strong>Contributions:</strong> Led military campaigns to protect Lango settlements and fostered clan unity during a period of regional conflicts.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Person 3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="team-box">
+                  <div class="image-area">
+                      <div class="image">
+                        <img src="assets/img/team/acaid.JPG" alt="Illustration of Ongora Okubal">
+                      </div>
+                  </div>
+                  <div class="space30"></div>
+                  <div class="heading1">
+                      <h4><a href="https://ugandatourismcenter.com/langi-people-and-their-culture">Arim Oroba</a></h4>
+                      <div class="space10"></div>
+                      <p>Military Leader</p>
+                      <div class="space10"></div>
+                      <p><strong>Significance:</strong> Maintained Lango’s military prowess during the 16th–17th centuries.</p>
+                      <p><strong>Contributions:</strong> Organized defenses against neighboring groups, ensuring Lango’s autonomy and cultural preservation.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Person 4 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="team-box">
+                  <div class="image-area">
+                      <div class="image">
+                        <img src="assets/img/team/acaid.JPG" alt="Illustration of Ongora Okubal">
+                      </div>
+                  </div>
+                  <div class="space30"></div>
+                  <div class="heading1">
+                      <h4><a href="https://en.wikipedia.org/wiki/Lango_people">Agoro Abwango</a></h4>
+                      <div class="space10"></div>
+                      <p>Military Leader</p>
+                      <div class="space10"></div>
+                      <p><strong>Significance:</strong> Heroic leader who died fighting the Banyoro in the 19th century.</p>
+                      <p><strong>Contributions:</strong> Led Lango warriors in battles supporting Omukama Kabalega, aiding Bunyoro’s resistance against colonial forces.</p>
+                  </div>
+              </div>
+          </div>
           
-                  <!--=====TEAM AREA END=======-->
+      </div>
+      
+  </div>
+</div>
+<!--=====PROMINENT PEOPLE AREA END=======-->
 
-        <!--=====CTA AREA START=======-->
+<!--=====CTA AREA START=======-->
 
         <div class="cta">
           <div class="container">

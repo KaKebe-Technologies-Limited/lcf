@@ -694,3 +694,20 @@
 		},
 
 	});
+
+
+
+  $(document).ready(function(){
+    $('.voices-slider').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: true,
+      navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
+      responsive: {
+        0: { items: 1 },
+        768: { items: 1 },
+        992: { items: 1 }
+      }
+    });
+  });
