@@ -24,6 +24,212 @@
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
+
+     <style>
+        .common-hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff6f61, #ffb74d);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .common-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/img/two.JPG') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .common-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .main-heading h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .main-heading .span {
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .main-heading .span a {
+            color: white;
+            text-decoration: none;
+        }
+        .main-heading .span .arrow {
+            color: #fff;
+        }
+        .stories-proverbs-area {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fff7f0, #ffe8d6);
+            position: relative;
+            overflow: hidden;
+        }
+        .stories-proverbs-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/img/two.JPG') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .stories-proverbs-area .container {
+            position: relative;
+            z-index: 1;
+        }
+        .story-card, .proverb-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover, .proverb-card:hover {
+            transform: translateY(-10px);
+        }
+        .story-img {
+            height: 400px;
+            object-fit: cover;
+            filter: brightness(100%) contrast(115%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .story-card:hover .story-img {
+            transform: scale(1.05);
+            filter: brightness(105%) contrast(120%);
+        }
+        .story-card .card-body, .proverb-card .card-body {
+            padding: 25px;
+            text-align: center;
+        }
+        .story-card .card-title, .proverb-card .card-title {
+            font-weight: 600;
+            color: #ff6f61;
+            font-size: 1.5rem;
+        }
+        .story-card .card-text, .proverb-card .card-text {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .proverb-card .card-text em {
+            font-style: italic;
+            color: #e65b50;
+        }
+        .more-stories {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .story-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .story-box:hover {
+            transform: translateY(-10px);
+        }
+        .story-box img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .story-box h4 a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+        .cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ff6f61, #ffb74d);
+            color: white;
+        }
+        .cta h2 {
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .cta-btn1, .cta-btn2 {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta-btn1 {
+            background: white;
+            color: #ff6f61;
+        }
+        .cta-btn1:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+        }
+        .cta-btn2 {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .cta-btn2:hover {
+            background: white;
+            color: #ff6f61;
+            transform: translateY(-3px);
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border-color: #ff6f61;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e65b50;
+            border-color: #e65b50;
+            transform: translateY(-3px);
+        }
+        .share-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .share-form .form-control {
+            border-radius: 10px;
+            border: 1px solid #ff6f61;
+        }
+        .share-form .btn-primary {
+            width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .story-img {
+                height: 300px;
+            }
+            .main-heading h1 {
+                font-size: 2.5rem;
+            }
+            .story-card .card-text, .proverb-card .card-text {
+                font-size: 0.9rem;
+            }
+            .story-box img {
+                height: 150px;
+            }
+        }
+     </style>
 </head>
 <body class="body tg-heading-subheading animation-style3">
 
@@ -90,6 +296,7 @@
     </div>
   </div>
 </div>
+
 <header>
   <!-- Desktop and Mobile Header -->
   <div class="header-area header-area1 header-area-all" id="header">
@@ -288,427 +495,219 @@
 </header>
 
  
-            <!--=====HERO AREA START=======-->
-    
-            <div class="common-hero">
-              <div class="container">
-                <div class="row align-items-center text-center">
-                  <div class="col-lg-10 m-auto">
-                    <div class="main-heading">
-                      <h1>The Important Of Cyber Security</h1>
-                        <div class="space16"></div>
-                        <span class="span"><img src="assets/img/icons/span1.png" alt=""> <a href="index.html">Home</a> <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Blog Details</span>
-                    </div>
+          <!--===== HERO AREA START =======-->
+    <div class="common-hero">
+      <div class="container">
+          <div class="row align-items-center text-center">
+              <div class="col-lg-10 m-auto">
+                  <div class="main-heading">
+                      <h1>Lango Folk Stories & Proverbs</h1>
+                      <div class="space16"></div>
+                      <span class="span">
+                          <img src="assets/img/icons/span1.png" alt="">
+                          <a href="index.html">Home</a>
+                          <span class="arrow"><i class="fa-regular fa-angle-right"></i></span>
+                          Culture
+                          <span class="arrow"><i class="fa-regular fa-angle-right"></i></span>
+                          Folk Stories & Proverbs
+                      </span>
                   </div>
-    
-                </div>
               </div>
-            </div>
-    
-            <!--=====HERO AREA END=======-->
-      
-              <section class="hero10-benar">
-                  <div class="container-fluid p-0">
-                    <div class="row">
-                      <div class="col-12">
-                       
-                      </div>
-                    </div>
-          
-                    <div class="slider-after"></div>
-                  </div>
-                </section>
-
-
-        <!--=====SERVICE DETAILS AREA START=======-->
-
-        <div class="service-details-area-all sp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="sidebar-box-area mb-40">
-                            <h3>Search by Keyword</h3>
-                            <div class="search">
-                                <input type="text" placeholder="Type keyword here">
-
-                                <div class="button">
-                                    <button><i class="fa-regular fa-magnifying-glass"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Our Services</h3>
-                            <ul class="features-list">
-                                <li><a href="#">Software Development <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Consulting Service <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Cloud Solution <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Cyber Security <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Data Analytics <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                                <li><a href="#">Manage It Services <span><i class="fa-regular fa-angle-right"></i></span></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Recent Blogs</h3>
-                            <div class="sidebar-blog-boxs">
-                                <div class="sidebar-blogs">
-                                    <div class="">
-                                        <div class="image">
-                                            <img src="assets/img/blog/blog-details-sidebar1.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="heading">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 19/02/2024</a>
-                                        <h5><a href="blog-details.html">We take a deep dive into the future of cloud computing </a></h5>
-                                    </div>
-                                </div>
-
-                                <div class="sidebar-blogs">
-                                    <div class="">
-                                        <div class="image">
-                                            <img src="assets/img/blog/blog-details-sidebar2.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="heading">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 19/02/2024</a>
-                                        <h5><a href="blog-details.html">Our team of experts will provide in-depth analysis </a></h5>
-                                    </div>
-                                </div>
-
-                                <div class="sidebar-blogs">
-                                    <div class="">
-                                        <div class="image">
-                                            <img src="assets/img/blog/blog-details-sidebar3.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="heading">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 19/02/2024</a>
-                                        <h5><a href="blog-details.html">Our case studies and success stories highlight real-world </a></h5>
-                                    </div>
-                                </div>
-
-                                <div class="sidebar-blogs">
-                                    <div class="">
-                                        <div class="image">
-                                            <img src="assets/img/blog/blog-details-sidebar3.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="heading">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 19/02/2024</a>
-                                        <h5><a href="blog-details.html">One of the primary objectives of cybersecurity is to protect </a></h5>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Tags</h3>
-                            <ul class="tags">
-                                <li><a href="#">Software Development</a></li>
-                                <li><a href="#">Cloud </a></li>
-                                <li><a href="#">It Solution</a></li>
-                                <li><a href="#">Data Analytics Service</a></li>
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Custom Development</a></li>
-                                <li><a href="#">Cyber Security</a></li>
-                                <li><a href="#">Consulting Service</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-box-area sidebar-bg mb-40">
-                            <h3>Download Brochure</h3>
-                            <p>With a focus on excellence  &  commitment to exceeding expectations, our experienced team is here to empower Solution.</p>
-                            <div class="download-btns">
-                                <a class="daownload1" href="#">PDF Download <img src="assets/img/icons/download-img.png" alt=""></a>
-                                <a class="daownload2" href="#">DOC Download <img src="assets/img/icons/download-img.png" alt=""></a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-8 details-left-space">
-                        <div class="service-details-post">
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="image">
-                                        <img src="assets/img/others/project-details-img1.png" alt="">
-                                    </div>
-                                    <div class="social-users">
-                                        <ul>
-                                            <li><a href="#"><img src="assets/img/icons/user-icon1.png" alt=""> John William</a></li>
-                                            <li><a href="#"><img src="assets/img/icons/user-icon2.png" alt=""> Feb 25, 24</a></li>
-                                            <li><a href="#"><img src="assets/img/icons/user-icon3.png" alt=""> Cyber Security</a></li>
-                                            <li><a href="#"><img src="assets/img/icons/user-icon4.png" alt=""> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="space30"></div>
-                                    <div class="heading1">
-                                        <h2>Protecting Your Business in the Digital Age of Cyber Security</h2>
-                                        <div class="space16"></div>
-                                        <p>In today's interconnected world, cybersecurity has become a critical concern for businesses of all sizes. With cyber threats evolving rapidly and the increasing reliance on digital technology, the importance of cybersecurity cannot be overstated. In this blog post, we'll delve into why cybersecurity is essential for protecting your business in the digital age.</p>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div class="space50"></div>
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="heading1">
-                                        <h5>Preventing Cyber Attacks</h5>
-                                        <div class="space16"></div>
-                                        <p>Cyber attacks come in many forms, from phishing scams and malware infections to ransomware attacks and DDoS (Distributed Denial of Service) attacks. These attacks can have devastating consequences for businesses, ranging from financial losses and reputational damage to legal liabilities. By investing in cybersecurity measures such as firewalls, intrusion detection systems, and security awareness training, businesses can reduce their susceptibility to cyber attacks and the impact of security incidents.</p>
-                                    </div>
-
-                                    <div class="space40"></div>
-                                    <div class="heading1">
-                                        <h5>Ensuring Business Continuity</h5>
-                                        <div class="space16"></div>
-                                        <p>In addition to protecting against external threats, cybersecurity also plays a crucial role in ensuring business continuity. In the event of a cyber attack or data breach, systems may be disrupted, data may be lost or corrupted, and downtime can result in significant financial losses. By implementing measures such as regular data backups, disaster recovery plans, and incident response protocols, businesses can minimize the impact of cyber incidents and maintain continuity of operations, even in the face adversity.</p>
-                                    </div>
-
-                                </div>
-                            </article>
-
-                            <div class="space50"></div>
-
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="video-area-image">
-                                        <div class="image">
-                                            <img src="assets/img/blog/blog-post-video-img.png" alt="">
-                                        </div>
-                                        <div class="video-buttton play-btn" href="https://www.youtube.com/watch?v=Y8XpQpW5OVY">
-                                            <a id="play-video play-btn" class="video-play-button">
-                                                <span></span>
-                                              </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="space30"></div>
-                                    <div class="heading1">
-                                        <h5>Maintaining Regulatory Compliance</h5>
-                                        <div class="space20"></div>
-                                        <p>Furthermore, cybersecurity is essential for maintaining compliance with various regulations and industry standards governing data privacy and security. Non-compliance can result in significant fines, legal penalties, and reputational damage to businesses. By implementing security controls and adhering to regulations such as GDPR, HIPAA, and PCI-DSS, businesses can mitigate the risk of regulatory violations and demonstrate their commitment to protecting customer data and privacy.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <div class="blog-details-border"></div>
-                            
-                            <div class="tags-links">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-7">
-                                        <div class="tags">
-                                            <ul>
-                                                <li class="text">Tags:</li>
-                                                <li class="tag-text"><a href="#">Business </a></li>
-                                                <li class="tag-text"><a href="#">Services </a></li>
-                                                <li class="tag-text"><a href="#">IT Solution </a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="social">
-                                            <ul>
-                                                <li class="text">Social:</li>
-                                                <li class="icon"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                                <li class="icon"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                                <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog-details-border"></div>
-
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="heading1">
-                                        <h5>Blog Comments (2)</h5>
-
-                                        <div class="comment-box">
-                                            <div class="box-top-area">
-                                                <div class="heading-area">
-                                                    <div class="image">
-                                                        <img src="assets/img/blog/comment-box-image1.png" alt="">
-                                                    </div>
-                                                    <div class="heading">
-                                                        <h5><a href="#">Mr. Ana Ritchie</a></h5>
-                                                        <a href="#" class="date">8/1/2024</a>
-                                                    </div>
-                                                </div>
-                                                <div class="reply-btn">
-                                                    <a href="#"><span><i class="fa-solid fa-reply"></i></span> Reply</a>
-                                                </div>
-                                            </div>
-                                            <div class="space20"></div>
-                                            <p class="pera">"The team at TechXen goes above and beyond to provide exceptional support and service. From the initial consultation to the final deployment, they were there every step of the way, ensuring a seamless integration of our new technology solution.”</p>
-                                        </div>
-
-                                        <div class="comment-box comment-box2">
-                                            <div class="box-top-area">
-                                                <div class="heading-area">
-                                                    <div class="image">
-                                                        <img src="assets/img/blog/comment-box-image2.png" alt="">
-                                                    </div>
-                                                    <div class="heading">
-                                                        <h5><a href="#">Matthew Kuhnemann</a></h5>
-                                                        <a href="#" class="date">8/1/2024</a>
-                                                    </div>
-                                                </div>
-                                                <div class="reply-btn">
-                                                    <a href="#"><span><i class="fa-solid fa-reply"></i></span> Reply</a>
-                                                </div>
-                                            </div>
-                                            <div class="space20"></div>
-                                            <p class="pera">"We approached TechXen with a complex IT problem, and they were able to provide an innovative solution that addressed our needs perfectly. Their team's creativity, technical prowess, and dedication to client satisfaction are truly commendable.”</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div class="space50"></div>
-
-                            <div class="contact-form-details">
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="text" placeholder="First Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="text" placeholder="Last Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="email" placeholder="Email">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="number" placeholder="Phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="single-input">
-                                                <input type="text" placeholder="Subject">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <div class="single-input">
-                                                <textarea cols="30" rows="5" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <button class="theme-btn1">Submit Now <span><i class="fa-solid fa-arrow-right"></i></span></button>
-                                        </div>
-
-                                    </div>
-                                </form>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--=====SERVICE DETAILS AREA END=======-->
-
-
-                          <!--=====BLOG AREA START=======-->
-
-                          <div class="blog blog-inline blog-page bg1 sp">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6 m-auto text-center">
-                                        <div class="heading1 main">
-                                            <h2>More Blog</h2>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="space30"></div>
-                              <div class="row">
-                                <div class="col-lg-6">
-                                  <div class="blog2-box">
-                                    <div class="image">
-                                      <img src="assets/img/blog/blog2-img2.png" alt="">
-                                    </div>
-                                    <div class="heading1">
-                                      <div class="tags">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
-                                        <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Ben Cutting</a>
-                                      </div>
-                                      <h4><a href="blog-details.html">The Importance of Cybersecurity</a></h4>
-                                      <div class="space16"></div>
-                                      <p>We explore the growing trend of remote work and its implications for cybersecurity.</p>
-                                      <div class="space16"></div>
-                                      <a href="blog-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                    </div>
-                                  </div>
-                                </div>
-                  
-                                <div class="col-lg-6">
-                                  <div class="blog2-box">
-                                    <div class="image">
-                                      <img src="assets/img/blog/blog2-img1.png" alt="">
-                                    </div>
-                                    <div class="heading1">
-                                      <div class="tags">
-                                        <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
-                                        <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Ben Cutting</a>
-                                      </div>
-                                      <h4><a href="blog-details.html">The Future of Cloud Computing</a></h4>
-                                      <div class="space16"></div>
-                                      <p>We take a deep dive into the future of cloud computing and discuss emerging trends and predictions that the industry.</p>
-                                      <div class="space16"></div>
-                                      <a href="blog-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                    </div>
-                                  </div>
-                                </div>
-                  
-                              </div>
-                            </div>
-                          </div>
-                  
-                          <!--=====BLOG AREA END=======-->
-
-        <!--=====CTA AREA START=======-->
-
-        <div class="cta">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-7">
-                <div class="heading1-w">
-                  <h2>At TechXen IT Solutions, We're Committed To Businesses</h2>
-                  <div class="space16"></div>
-                  <p>Take the first step towards achieving your business goals by contacting us today. Schedule a consultation with one of our IT specialists to discuss your objectives and explore how our innovative solutions can propel.</p>
-                </div>
-              </div>
-
-              <div class="col-lg-5">
-                <div class="buttons">
-                  <a class="cta-btn1" href="service.html">Request a Consultaion <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                  <a class="cta-btn2" href="service.html">Explore Solution <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+      </div>
+  </div>
+  <!--===== HERO AREA END =======-->
 
-        <!--=====CTA AREA END=======-->
+  <!--===== STORIES & PROVERBS AREA START =======-->
+  <div class="stories-proverbs-area">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-10 mx-auto text-center">
+                  <h2 class="mb-3 text-primary">Tales Woven by Lango’s Soul</h2>
+                  <p class="lead mb-5">In the heart of Lango’s 15,570.7 km² homeland, 2.5 million voices carry stories and proverbs that echo through Otuke Hills and Lake Kwania. Join us by the fireside to hear the wisdom of 149 clans.</p>
+              </div>
+          </div>
+          <div class="row g-4">
+              <!-- Introduction to Storytelling -->
+              <div class="col-lg-12">
+                  <div class="story-card" style="animation: fadeIn 1s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango storytelling under Ngeta Hills" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">The Art of Lango Storytelling</h4>
+                          <p class="card-text">By starlit skies, *wang tic* elders gather Lango’s clans to share tales of migration, heroism, and nature. These stories, passed through generations since the 16th-century journey from Abyssinia, bind 2.5 million souls in unity and pride.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Folk Stories -->
+              <div class="col-lg-4 col-md-6">
+                  <div class="story-card" style="animation: fadeIn 1.2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Migration story at Otuke Hills" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">The Great Migration</h4>
+                          <p class="card-text">Led by Ongora Okubal, Lango’s clans crossed deserts to find Otuke Hills. A lone eagle guided them to fertile lands, whispering, “Here, your roots will grow.” Today, 149 clans honor this journey with songs.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="story-card" style="animation: fadeIn 1.4s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Heroism story by Lake Kwania" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">The Fisherman’s Courage</h4>
+                          <p class="card-text">On Lake Kwania, a young fisherman faced a raging storm to save his clan’s nets. His bravery, blessed by ancestors, calmed the waters, teaching Lango’s youth to face fear with heart.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="story-card" style="animation: fadeIn 1.6s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Nature story at Got Ngeta" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">The Whispering Rock</h4>
+                          <p class="card-text">Got Ngeta Rock, standing tall, once spoke to a lost hunter, guiding him home with winds that sang of unity. Lango’s clans now climb its slopes, listening for ancestral wisdom.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Proverbs -->
+              <div class="col-lg-6 col-md-6">
+                  <div class="proverb-card" style="animation: fadeIn 1.8s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango proverb shared by elders" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Proverbs of Wisdom</h4>
+                          <p class="card-text">
+                              <em>“A single stick breaks, but a bundle stands strong.”</em> — Unity binds Lango’s clans.<br>
+                              <em>“The river flows, yet the rock remains.”</em> — Resilience endures all storms.<br>
+                              <em>“A seed sown in trust yields a harvest of hope.”</em> — Faith builds community.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="proverb-card" style="animation: fadeIn 2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango proverb at clan gathering" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Proverbs of Life</h4>
+                          <p class="card-text">
+                              <em>“The eagle soars high but nests low.”</em> — Pride is grounded in humility.<br>
+                              <em>“A story untold is a star unseen.”</em> — Share wisdom to light the path.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Cultural Significance -->
+              <div class="col-lg-12">
+                  <div class="story-card" style="animation: fadeIn 2.2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango clans sharing stories at Barlonyo" class="story-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">The Heart of Lango’s Tales</h4>
+                          <p class="card-text">From Barlonyo’s healing grounds to Lira’s ceremonial fires, Lango’s stories and proverbs shape identity. They honor heroes like John Akii Bua, unite clans under *Won Nyaci*, and guide 2.5 million souls with ancestral wisdom.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Call to Share -->
+              <div class="col-lg-12">
+                  <div class="share-form" style="animation: fadeIn 2.4s ease-in-out;">
+                      <h3 class="text-primary mb-4">Share Your Lango Story</h3>
+                      <form action="#">
+                          <div class="row g-3">
+                              <div class="col-lg-6">
+                                  <input type="text" class="form-control" placeholder="First Name">
+                              </div>
+                              <div class="col-lg-6">
+                                  <input type="text" class="form-control" placeholder="Last Name">
+                              </div>
+                              <div class="col-lg-6">
+                                  <input type="email" class="form-control" placeholder="Email">
+                              </div>
+                              <div class="col-lg-6">
+                                  <input type="tel" class="form-control" placeholder="Phone">
+                              </div>
+                              <div class="col-lg-12">
+                                  <input type="text" class="form-control" placeholder="Story Title">
+                              </div>
+                              <div class="col-lg-12">
+                                  <textarea class="form-control" rows="5" placeholder="Share your story or proverb..."></textarea>
+                              </div>
+                              <div class="col-lg-12">
+                                  <button class="btn btn-primary">Submit Your Tale <span><i class="fa-solid fa-arrow-right"></i></span></button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== STORIES & PROVERBS AREA END =======-->
+
+  <!--===== MORE STORIES AREA START =======-->
+  <div class="more-stories">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 m-auto text-center">
+                  <div class="heading1 main">
+                      <h2>More Lango Tales</h2>
+                  </div>
+              </div>
+          </div>
+          <div class="space30"></div>
+          <div class="row g-4">
+              <div class="col-lg-6">
+                  <div class="story-box">
+                      <img src="assets/img/two.JPG" alt="Lango tale of heroism" class="img-fluid">
+                      <div class="heading1">
+                          <div class="tags">
+                              <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
+                              <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Clan Elder</a>
+                          </div>
+                          <h4><a href="stories-details.html">The Hero’s Run</a></h4>
+                          <div class="space16"></div>
+                          <p>A tale of a young runner, inspired by John Akii Bua, who raced across Got Ngeta to save his clan.</p>
+                          <div class="space16"></div>
+                          <a href="stories-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="story-box">
+                      <img src="assets/img/two.JPG" alt="Lango tale of nature’s wisdom" class="img-fluid">
+                      <div class="heading1">
+                          <div class="tags">
+                              <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
+                              <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Clan Elder</a>
+                          </div>
+                          <h4><a href="stories-details.html">The Lake’s Secret</a></h4>
+                          <div class="space16"></div>
+                          <p>A story of Lake Kwania’s hidden spirit, teaching Lango’s clans to respect nature’s balance.</p>
+                          <div class="space16"></div>
+                          <a href="stories-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== MORE STORIES AREA END =======-->
+
+  <!--===== CTA AREA START =======-->
+  <div class="cta">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7">
+                  <div class="heading1-w">
+                      <h2>Keep Lango’s Stories Alive</h2>
+                      <div class="space16"></div>
+                      <p>Share your tales and proverbs to preserve Lango’s heritage. Contact us to contribute to our living archive of 149 clans’ wisdom.</p>
+                  </div>
+              </div>
+              <div class="col-lg-5">
+                  <div class="buttons">
+                      <a class="cta-btn1" href="stories.html">Explore More Stories <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                      <a class="cta-btn2" href="contact.html">Share Your Tale <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== CTA AREA END =======-->
  <!--===== FOOTER AREA START =======-->
  <div class="footer1 _relative">
   <div class="container">

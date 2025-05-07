@@ -24,6 +24,189 @@
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
+     <style>
+       .common-hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ff6f61, #ffb74d);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .common-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/img/two.JPG') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .common-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .main-heading h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .main-heading .span {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .main-heading .span a {
+            color: white;
+            text-decoration: none;
+        }
+        .main-heading .span .arrow {
+            color: #fff;
+        }
+        .travel-guide-area {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fff7f0, #ffe8d6);
+            position: relative;
+            overflow: hidden;
+        }
+        .travel-guide-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/img/two.JPG') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .travel-guide-area .container {
+            position: relative;
+            z-index: 1;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .guide-card:hover {
+            transform: translateY(-10px);
+        }
+        .guide-img {
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(100%) contrast(115%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .guide-card:hover .guide-img {
+            transform: scale(1.05);
+            filter: brightness(105%) contrast(120%);
+        }
+        .guide-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .guide-card .card-title {
+            font-weight: 600;
+            color: #ff6f61;
+        }
+        .guide-card .card-text {
+            color: #333;
+            font-size: 0.95rem;
+        }
+        .servcie2 {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .service-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+        .service-box img {
+            max-height: 60px;
+            margin-bottom: 15px;
+        }
+        .service-box h4 a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+        .cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ff6f61, #ffb74d);
+            color: white;
+        }
+        .cta h2 {
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .cta-btn1, .cta-btn2 {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta-btn1 {
+            background: white;
+            color: #ff6f61;
+        }
+        .cta-btn1:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+        }
+        .cta-btn2 {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .cta-btn2:hover {
+            background: white;
+            color: #ff6f61;
+            transform: translateY(-3px);
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border-color: #ff6f61;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e65b50;
+            border-color: #e65b50;
+            transform: translateY(-3px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .guide-img {
+                height: 250px;
+            }
+            .main-heading h1 {
+                font-size: 2rem;
+            }
+            .guide-card .card-text {
+                font-size: 0.9rem;
+            }
+        }
+     </style>
 </head>
 <body class="body tg-heading-subheading animation-style3">
 
@@ -288,309 +471,196 @@
 </header>
 
  
-               <!--=====HERO AREA START=======-->
-
-               <div class="common-hero">
-                <div class="container">
-                  <div class="row align-items-center text-center">
-                    <div class="col-lg-12 m-auto">
-                      <div class="main-heading">
-                        <h1>Software Development</h1>
-                          <div class="space16"></div>
-                          <span class="span"><img src="assets/img/icons/span1.png" alt=""> <a href="index.html">Home</a> <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Project <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Project Details</span>
-                      </div>
-                    </div>
+            <!--===== HERO AREA START =======-->
+    <div class="common-hero">
+      <div class="container">
+          <div class="row align-items-center text-center">
+              <div class="col-lg-12 m-auto">
+                  <div class="main-heading">
+                      <h1>Lango Travel Guide</h1>
+                      <div class="space16"></div>
+                      <span class="span">
+                          <img src="assets/img/icons/span1.png" alt="">
+                          <a href="index.html">Home</a>
+                          <span class="arrow"><i class="fa-regular fa-angle-right"></i></span>
+                          Tourism
+                          <span class="arrow"><i class="fa-regular fa-angle-right"></i></span>
+                          Travel Guide
+                      </span>
                   </div>
-                </div>
               </div>
-      
-              <!--=====HERO AREA END=======-->
-      
-              <section class="hero10-benar">
-                  <div class="container-fluid p-0">
-                    <div class="row">
-                      <div class="col-12">
-                       
+          </div>
+      </div>
+  </div>
+  <!--===== HERO AREA END =======-->
+
+  <!--===== TRAVEL GUIDE AREA START =======-->
+  <div class="travel-guide-area">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-10 mx-auto text-center">
+                  <h2 class="mb-3 text-primary">Your Gateway to Lango’s Heart</h2>
+                  <p class="lead mb-5">Explore the soul of Lango, a 15,570.7 km² homeland where 2.5 million people weave a vibrant tapestry of culture, nature, and history. From sacred sites to thrilling adventures, let our guide lead you.</p>
+              </div>
+          </div>
+          <div class="row g-4">
+              <!-- Overview of Lango -->
+              <div class="col-lg-12">
+                  <div class="guide-card" style="animation: fadeIn 1s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango’s cultural landscape with clans and lakes" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Welcome to Lango</h4>
+                          <p class="card-text">Nestled in Northern Uganda, Lango’s 149 clans, led by the *Won Nyaci*, have thrived since their 16th-century migration from Abyssinia. Discover a land of lakes, hills, and stories, where heroes like John Akii Bua inspire pride.</p>
                       </div>
-                    </div>
-          
-                    <div class="slider-after"></div>
                   </div>
-                </section>
-
-
-      <!--=====ABOUT AREA START =======-->
-
-        <!--=====SERVICE DETAILS AREA START=======-->
-
-        <div class="service-details-area-all sp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 details-left-space">
-                        <div class="service-details-post">
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="image">
-                                        <img src="assets/img/others/project-details-img1.png" alt="">
-                                    </div>
-                                    <div class="space30"></div>
-                                    <div class="heading1">
-                                        <h2>Streamline Your Business Operations with (ERP) Systems</h2>
-                                        <div class="space16"></div>
-                                        <p>Enterprise Resource Planning (ERP) systems are powerful tools designed to integrate and streamline various business processes, from finance and human resources to supply chain management and customer relationship management. At [Company Name], we specialize in ERP implementation, helping businesses of all sizes optimize their operations, improve efficiency, and drive growth.</p>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div class="space50"></div>
-
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="heading1">
-                                                <h5>Our (ERP) Implementation Process</h5>
-                                                <div class="space16"></div>
-                                                <div class="boxs-area">
-                                                    <ul>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Needs Assessment</li>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Solution Design</li>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Data Migration </li>
-                                                    </ul>
-                                                    <ul>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Change Management</li>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Testing & Quality</li>
-                                                        <li><span class="check"><i class="fa-solid fa-check"></i></span> Go Live & Support</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <div class="space50"></div>
-
-                            <article>
-                                <div class="details-post-area">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="heading1">
-                                                <h5>Benefits of (ERP) Implementation</h5>
-                                                <div class="space16"></div>
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="project-details-box heading1">
-                                                            <h4><a href="project-details.html">Improved Efficiency</a></h4>
-                                                            <div class="space16"></div>
-                                                            <p>Streamline business processes and workflows, reducing manual effort and improving productivity.</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="project-details-box heading1">
-                                                            <h4><a href="project-details.html">Improved Efficiency</a></h4>
-                                                            <div class="space16"></div>
-                                                            <p>Streamline business processes and workflows, reducing manual effort and improving productivity.</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="project-details-box heading1">
-                                                            <h4><a href="project-details.html">Improved Efficiency</a></h4>
-                                                            <div class="space16"></div>
-                                                            <p>Streamline business processes and workflows, reducing manual effort and improving productivity.</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="project-details-box heading1">
-                                                            <h4><a href="project-details.html">Improved Efficiency</a></h4>
-                                                            <div class="space16"></div>
-                                                            <p>Streamline business processes and workflows, reducing manual effort and improving productivity.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <div class="space50"></div>
-
-                            <div class="get-started-box">
-                                <h3>Get Started with ERP Implementation Today</h3>
-                                <div class="space16"></div>
-                                <p>Ready to take your business to the next level with ERP implementation? Contact us today to learn more about our ERP services and how we can help you optimize your business operations for success.</p>
-                                <div class="space30"></div>
-                                <a href="contact.html" class="get-started-btn">Call Now <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                      <div class="sidebar-box-area mb-40">
-                          <h3>Search by Keyword</h3>
-                          <div class="search">
-                              <input type="text" placeholder="Type keyword here">
-
-                              <div class="button">
-                                  <button><i class="fa-regular fa-magnifying-glass"></i></button>
-                              </div>
-                          </div>
+              </div>
+              <!-- Top Activities -->
+              <div class="col-lg-4 col-md-6">
+                  <div class="guide-card" style="animation: fadeIn 1.2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Cultural tours with Okeme dances in Lango" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Cultural Tours</h4>
+                          <p class="card-text">Join vibrant Okeme and Abuda dances, visit traditional villages, and connect with Lango’s clan heritage.</p>
                       </div>
-
-                      <div class="sidebar-box-area sidebar-bg mb-40">
-                          <h3>Tags</h3>
-                          <ul class="tags">
-                              <li><a href="#">Software Development</a></li>
-                              <li><a href="#">Cloud </a></li>
-                              <li><a href="#">It Solution</a></li>
-                              <li><a href="#">Data Analytics Service</a></li>
-                              <li><a href="#">Technology</a></li>
-                              <li><a href="#">Custom Development</a></li>
-                              <li><a href="#">Cyber Security</a></li>
-                              <li><a href="#">Consulting Service</a></li>
-                          </ul>
-                      </div>
-
-                      <div class="sidebar-box-area sidebar-bg mb-40">
-                          <h3>Get A Free Quote</h3>
-                          <div class="contact-form">
-                              <form action="#">
-                                  
-                                  <div class="single-input">
-                                      <input type="text" placeholder="Your Name">
-                                  </div>
-
-                                  <div class="single-input">
-                                      <input type="email" placeholder="Email Address">
-                                  </div>
-
-                                  <div class="single-input">
-                                      <input type="number" placeholder="Phone Number">
-                                  </div>
-
-                                  <div class="single-input">
-                                      <textarea placeholder="Your Message" cols="30" rows="3"></textarea>
-                                  </div>
-
-                                  <div class="button">
-                                      <button class="theme-btn1">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></button>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-
                   </div>
-
-                  
-                </div>
-            </div>
-        </div>
-
-        <!--=====SERVICE DETAILS AREA END=======-->
-
-                <!--=====SERVICE AREA START=======-->
-
-                <div class="servcie2 sp bg1">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-lg-8 m-auto text-center">
-                        <div class="heading1">
-                          <h2>More More Project</h2>
-                        </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="guide-card" style="animation: fadeIn 1.4s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Fishing on Lake Kwania with Lango fishermen" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Fishing on Lake Kwania</h4>
+                          <p class="card-text">Cast nets with local fishermen on Lake Kwania, savoring fresh catches amid serene waters.</p>
                       </div>
-                    </div>
-        
-                    <div class="space30"></div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="">
-                          <div class="servcie2-box servcie2-box-2">
-                            <div class="icon">
-                              <img src="assets/img/icons/service-page-icon1.png" alt="">
-                            </div>
-                            <a href="service-details.html" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
-                            <div class="heading1">
-                              <h4><a href="service-details.html">Consulting Service</a></h4>
-                              <div class="space16"></div>
-                              <p>Strategic IT planning  roadmap development Business process analysis and improvement for It solution & technology.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-        
-                      <div class="col-lg-4 col-md-6">
-                        <div class="">
-                          <div class="servcie2-box servcie2-box-2">
-                            <div class="icon">
-                              <img src="assets/img/icons/service-page-icon2.png" alt="">
-                            </div>
-                            <a href="service-details.html" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
-                            <div class="heading1">
-                              <h4><a href="service-details.html">Software Development</a></h4>
-                              <div class="space16"></div>
-                              <p>Mobile app development for iOS, Android, and cross-platform solutions & web <br> application.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-        
-                      <div class="col-lg-4 col-md-6">
-                        <div class="">
-                          <div class="servcie2-box servcie2-box-2">
-                            <div class="icon">
-                              <img src="assets/img/icons/service-page-icon3.png" alt="">
-                            </div>
-                            <a href="service-details.html" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
-                            <div class="heading1">
-                              <h4><a href="service-details.html">Cloud Solution</a></h4>
-                              <div class="space16"></div>
-                              <p>Infrastructure as a Service (IaaS), Platform as a Service (PaaS),  and Software as a Service <br> (SaaS)</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-      
-        
-                    </div>
-        
-                    <div class="space40"></div>
-                    <div class="row">
-                      <div class="col-lg-12 text-center">
-                        <a class="theme-btn1" href="#">View All Services <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                      </div>
-                    </div>
-        
                   </div>
-                </div>
-        
-                <!--=====SERVICE AREA END=======-->
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="guide-card" style="animation: fadeIn 1.6s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Hiking Got Ngeta Rock in Lango" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Hiking Got Ngeta</h4>
+                          <p class="card-text">Trek Got Ngeta Rock for stunning views and join the annual Mini Run challenge.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Cultural Sites -->
+              <div class="col-lg-6 col-md-6">
+                  <div class="guide-card" style="animation: fadeIn 1.8s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Otuke Hills, Lango’s migration origin" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Otuke Hills</h4>
+                          <p class="card-text">Explore the birthplace of Lango, where Ongora Okubal led clans in the 16th century, steeped in resilience.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="guide-card" style="animation: fadeIn 2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Barlonyo Memorial for Lango’s healing" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Barlonyo Memorial</h4>
+                          <p class="card-text">Reflect at Barlonyo, a Lira District site honoring the 2004 healing of Lango’s spirit.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Practical Tips -->
+              <div class="col-lg-12">
+                  <div class="guide-card" style="animation: fadeIn 2.2s ease-in-out;">
+                      <img src="assets/img/two.JPG" alt="Lango’s vibrant markets and cuisine" class="guide-img img-fluid">
+                      <div class="card-body">
+                          <h4 class="card-title">Practical Tips</h4>
+                          <p class="card-text">Stay in Lira’s cozy guesthouses, savor local dishes like malakwang, and book with trusted tour operators like Lango Heritage Tours for a seamless visit.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Plan Your Trip -->
+              <div class="col-lg-12 text-center mt-5">
+                  <div class="guide-card bg-white p-4 rounded-4 shadow" style="animation: fadeIn 2.4s ease-in-out;">
+                      <h3 class="text-primary">Plan Your Lango Adventure</h3>
+                      <p class="lead mb-4">Ready to explore Lango’s cultural riches and natural wonders? Contact our tourism experts to craft your perfect itinerary.</p>
+                      <a href="https://www.langoheritage.com" class="btn btn-primary" target="_blank">Start Planning Now</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== TRAVEL GUIDE AREA END =======-->
 
-                          <!--=====CTA AREA START=======-->
+  <!--===== SERVICE AREA START =======-->
+  <div class="servcie2 sp bg1">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 m-auto text-center">
+                  <div class="heading1">
+                      <h2>Explore Lango’s Tourism Offerings</h2>
+                  </div>
+              </div>
+          </div>
+          <div class="space30"></div>
+          <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-box">
+                      <img src="assets/img/icons/culture-icon.png" alt="Cultural Experiences">
+                      <div class="heading1">
+                          <h4><a href="culture.html">Cultural Experiences</a></h4>
+                          <div class="space16"></div>
+                          <p>Immerse in Lango’s traditions, from Okeme dances to clan ceremonies.</p>
+                      </div>
+                      <a href="culture.html" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-box">
+                      <img src="assets/img/icons/tourism-icon1.png" alt="Outdoor Adventures">
+                      <div class="heading1">
+                          <h4><a href="tourism.html#outdoor">Outdoor Adventures</a></h4>
+                          <div class="space16"></div>
+                          <p>Hike Got Ngeta or fish on Lake Kwania for thrilling experiences.</p>
+                      </div>
+                      <a href="tourism.html#outdoor" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-box">
+                      <img src="assets/img/icons/travel-guide-icon.png" alt="Guided Tours">
+                      <div class="heading1">
+                          <h4><a href="tourism.html#guided-tours">Guided Tours</a></h4>
+                          <div class="space16"></div>
+                          <p>Book expert-led tours to explore Lango’s history and sites.</p>
+                      </div>
+                      <a href="tourism.html#guided-tours" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="space40"></div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <a class="btn btn-primary" href="tourism.html">Discover All Experiences</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== SERVICE AREA END =======-->
 
-                          <div class="cta">
-                            <div class="container">
-                              <div class="row align-items-center">
-                                <div class="col-lg-7">
-                                  <div class="heading1-w">
-                                    <h2>At TechXen IT Solutions, We're Committed To Businesses</h2>
-                                    <div class="space16"></div>
-                                    <p>Take the first step towards achieving your business goals by contacting us today. Schedule a consultation with one of our IT specialists to discuss your objectives and explore how our innovative solutions can propel.</p>
-                                  </div>
-                                </div>
-                  
-                                <div class="col-lg-5">
-                                  <div class="buttons">
-                                    <a class="cta-btn1" href="service.html">Request a Consultaion <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                    <a class="cta-btn2" href="service.html">Explore Solution <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                  
-      <!--=====CTA AREA END=======-->
+  <!--===== CTA AREA START =======-->
+  <div class="cta">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7">
+                  <div class="heading1-w">
+                      <h2>Embark on Your Lango Journey</h2>
+                      <div class="space16"></div>
+                      <p>From cultural festivals to serene lakes, Lango awaits. Contact us to plan your unforgettable adventure in the heart of Uganda.</p>
+                  </div>
+              </div>
+              <div class="col-lg-5">
+                  <div class="buttons">
+                      <a class="cta-btn1" href="tourism.html#travel-guide">View Travel Guide <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                      <a class="cta-btn2" href="contact.html">Contact Us <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--===== CTA AREA END =======-->
                   
       <!--===== FOOTER AREA START =======-->
           <div class="footer1 _relative">

@@ -147,6 +147,207 @@
               height: 200px;
           }
       }
+     
+      
+       
+        .culture-hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ff6f61, #ffb74d);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        .culture-nav .nav-link {
+            color: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .culture-nav .nav-link:hover,
+        .culture-nav .nav-link.active {
+            background-color: #ffffff33;
+            color: #fff;
+        }
+        .culture-section {
+            padding: 60px 0;
+        }
+        .culture-media img {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .culture-media img:hover {
+            transform: scale(1.05);
+        }
+        .media-caption {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .site-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .site-card:hover {
+            transform: translateY(-5px);
+        }
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ff6f61;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .site-type {
+            background: #ff6f61;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border-color: #ff6f61;
+            padding: 10px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e65b50;
+            border-color: #e65b50;
+        }
+        .tradition-values span {
+            display: inline-block;
+            background: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .culture-hero {
+                padding: 40px 20px;
+            }
+            .culture-nav .nav-link {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+        .legacy-section {
+        background: linear-gradient(135deg, #fff7f0, #ffe8d6);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    .legacy-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('assets/img/two.JPG') no-repeat center center/cover;
+        opacity: 0.1;
+        z-index: 0;
+    }
+    .legacy-content {
+        position: relative;
+        z-index: 1;
+    }
+    .value-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .value-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    .value-image {
+        height: 150px;
+        overflow: hidden;
+    }
+    .value-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .value-card:hover .value-image img {
+        transform: scale(1.1);
+    }
+    .value-content {
+        padding: 15px;
+        text-align: center;
+    }
+    .value-content h5 {
+        color: #ff6f61;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .btn-primary {
+        background-color: #ff6f61;
+        border-color: #ff6f61;
+        padding: 12px 40px;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-primary:hover {
+        background-color: #e65b50;
+        border-color: #e65b50;
+        box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
+    }
+    .btn-primary::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.4s ease, height 0.4s ease;
+    }
+    .btn-primary:hover::after {
+        width: 200px;
+        height: 200px;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+        .legacy-section {
+            padding: 20px;
+        }
+        .value-image {
+            height: 120px;
+        }
+        .btn-primary {
+            padding: 10px 30px;
+            font-size: 1rem;
+        }
+    }
+
+   
+    
   </style>
 
      <!--=====JQUERY=======-->
@@ -421,7 +622,7 @@
                   <div class="row align-items-center text-center">
                     <div class="col-lg-12 m-auto">
                       <div class="main-heading">
-                        <h1>Our Project</h1>
+                        <h1>TOurism Sites.</h1>
                           <div class="space16"></div>
                           <span class="span"><img src="assets/img/icons/span1.png" alt=""> <a href="index.html">Home</a> <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Our Project</span>
                       </div>
@@ -436,7 +637,7 @@
                   <div class="container-fluid p-0">
                     <div class="row">
                       <div class="col-12">
-                        <div class="marquee-wrap marquee-wrap-inner">
+                        <!-- <div class="marquee-wrap marquee-wrap-inner">
                           <div class="marquee-text">
           
                             <div class="brand-single-box">
@@ -541,7 +742,7 @@
       
           
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
           
@@ -550,220 +751,250 @@
                 </section>
 
 
-       <!--===== CULTURAL HERITAGE AREA START =======-->
-<div class="culture-heritage-area sp">
+    <!--===== CULTURAL HERITAGE AREA START =======-->
+      <!--===== CULTURAL STORY AREA START =======-->
+    <div class="culture-heritage-area py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Hero Section for Cultural Story -->
+                    <div class="culture-hero text-center">
+                        <h1 class="display-4 fw-bold">The Eternal Spirit of Lango</h1>
+                        <p class="lead mb-4">Journey through the sacred sites of Lango, where the echoes of ancestors, the courage of warriors, and the beauty of nature tell a timeless story of heritage and unity.</p>
+                        <div class="culture-nav d-flex justify-content-center flex-wrap">
+                            <a href="#story" class="nav-link active">Lango’s Cultural Story</a>
+                        </div>
+                    </div>
+
+                    <!-- Storytelling Section -->
+                    <section id="story" class="culture-section">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h2 class="mb-3">A Tapestry of Land and Legacy</h2>
+                                <p class="lead">In the heart of Northern Uganda, the Lango people—2.5 million strong—have woven a vibrant story across 15,570.7 km² of land. From their 16th-century migration to sacred hills and lakes, their 149 clans, led by brave warriors like Ongora Okubal, have shaped a legacy preserved in cultural sites. Join us on this journey through Lango’s soul.</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>The Great Migration</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>Centuries ago, the Lango fled Abyssinia, their hearts set on a new home. Guided by the stars and the courage of clans like Atek, Arak, and Okarowok, they crossed vast lands to reach Otuke Hills, where their story began. This sacred site whispers tales of resilience.</p>
+                                        <p class="quote">"The river does not flow backward."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>Otuke Hills: The Birthplace</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>At Otuke Hills, Ongora Okubal planted the seeds of Lango unity. Here, the first clans built their homes, and the *Awitong* (clan chiefs) forged a stateless society. Today, these hills in Otuke District stand as a monument to Lango’s enduring spirit.</p>
+                                        <p class="quote">"A single stick cannot make a fire."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>Lira’s Sacred Grounds</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>In Lira City, the cultural grounds pulse with life during *Won Nyaci* enthronements. Here, the *wang tic* (elders) lead ceremonies, and nanga drums echo as clans unite. These grounds are where Lango’s past and present dance together.</p>
+                                        <p class="quote">"The eye that wanders will see wonders."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>Barlonyo’s Memory</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>The Barlonyo Memorial Ground in Lira District holds the pain and pride of Lango’s history. Marking the 2004 tragedy, it’s a place of reflection where clans gather to honor ancestors and heal, their unity a testament to resilience.</p>
+                                        <p class="quote">"When elephants fight, it is the grass that suffers."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>Lake Kwania’s Embrace</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>By the shores of Lake Kwania, the Lango fish, celebrate, and tell stories under the stars. This sacred lake in Kwania District hosts rituals and festivals, its waters reflecting the harmony of 149 clans bound by heritage.</p>
+                                        <p class="quote">"A child who does not listen will cut his finger."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="story-card">
+                                    <div class="story-image">
+                                        <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                        <div class="story-overlay">
+                                            <h4>Ngeta Hills: The Sentinel</h4>
+                                        </div>
+                                    </div>
+                                    <div class="story-content">
+                                        <p>Ngeta Hills in Lira District stand as silent guardians of Lango’s spirit. Here, clans perform rituals, and elders share wisdom, their voices mingling with the wind. These hills are a beacon of cultural pride and connection to nature.</p>
+                                        <p class="quote">"Size does not determine wisdom."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-lg-12">
+                            <div class="legacy-section text-center">
+                                <div class="legacy-content">
+                                    <h2 class="mb-4" style="color: #ff6f61; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">The Legacy Lives On</h2>
+                                    <p class="lead mb-4">In the heart of Lango’s 15,570.7 km² homeland, where the sun kisses Otuke Hills and Lake Kwania’s waters shimmer with ancestral whispers, a vibrant legacy thrives. The Lango people, 2.5 million strong, preserve their sacred sites—Otuke, Barlonyo, Lake Kwania, and Ngeta—as living canvases of their story. Guided by the *Won Nyaci*, the Paramount Chief, and *Awitong* clan leaders, these 149 clans honor their 16th-century migration from Abyssinia, led by warriors like Ongora Okubal. At Barlonyo, they heal the scars of 2004 with unity; on Ngeta Hills, elders (*wang tic*) weave tales under starlit skies. Ceremonies at Lira’s cultural grounds, where nanga drums echo, and rituals by Lake Kwania bind the community, ensuring the spirit of Lango—forged by heroes like John Akii Bua—burns bright for generations.</p>
+                                    <h4 class="mt-4 mb-3">Values That Shine Eternal</h4>
+                                    <div class="row g-4 tradition-values">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Resilience</h5>
+                                                    <p>From the trials of migration to Barlonyo’s healing, Lango rises unbroken.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Unity</h5>
+                                                    <p>149 clans unite at Lira’s grounds, their bonds a beacon of strength.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Heritage</h5>
+                                                    <p>Otuke Hills cradle the stories of Lango’s storied past.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Spirituality</h5>
+                                                    <p>Lake Kwania’s shores host rituals that echo ancestral voices.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Community</h5>
+                                                    <p>Clan gatherings led by *Awitong* weave a tapestry of shared dreams.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="value-card">
+                                                <div class="value-image">
+                                                    <img src="assets/img/two.JPG" alt="Lango cultural landscape">
+                                                </div>
+                                                <div class="value-content">
+                                                    <h5>Pride</h5>
+                                                    <p>Akii Bua’s Olympic glory lights the path of Lango’s pride.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-5">
+                                        <a href="https://www.langoheritage.com" class="btn btn-primary" target="_blank">Embark on Lango’s Journey</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===== CULTURAL STORY AREA END =======-->
+  <!--===== CULTURAL SITES AREA END =======-->
+  <!--===== CULTURAL HERITAGE AREA END =======-->
+
+  <!--===== CULTURAL GALLERY START =======-->
+<!--===== CULTURAL GALLERY SECTION START =======-->
+<!--===== CULTURAL GALLERY SECTION START =======-->
+<div class="culture-gallery py-5 bg-light">
   <div class="container">
       <div class="row">
-          <div class="col-lg-10 m-auto">
-              <!-- Hero Section for Cultural Heritage -->
-              <div class="culture-hero text-center">
-                  <h1>The Rhythmic Soul of Lango</h1>
-                  <p class="lead">Exploring the vibrant dances, captivating music, and timeless folk stories that define Lango's cultural identity</p>
-                  <div class="culture-nav">
-                      <a href="#dances" class="culture-nav-item active">Traditional Dances</a>
-                      <a href="#music" class="culture-nav-item">Music & Instruments</a>
-                      <a href="#stories" class="culture-nav-item">Folk Stories & Proverbs</a>
-                  </div>
-              </div>
-
-              <!-- Traditional Dances Section -->
-              <section id="dances" class="culture-section">
-                  <div class="row align-items-center">
-                      <div class="col-lg-6">
-                          <div class="culture-media">
-                              <img src="assets/img/lango-dance.jpg" alt="Lango traditional dance performance" class="img-fluid rounded">
-                              <div class="media-caption">Okeme dance performed during cultural festivals</div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="culture-content">
-                              <h2>Traditional Dances of Lango</h2>
-                              <p>The Lango people express their joy, history, and social values through dynamic traditional dances that have been passed down through generations. These dances are performed during weddings, initiation ceremonies, and cultural festivals.</p>
-                              
-                              <div class="dance-types">
-                                  <div class="dance-item">
-                                      <h4><i class="fas fa-child-dress"></i> Okeme Dance</h4>
-                                      <p>A vigorous dance performed by young warriors, characterized by high jumps and energetic movements that showcase strength and agility.</p>
-                                  </div>
-                                  <div class="dance-item">
-                                      <h4><i class="fas fa-people-group"></i> Abuda Dance</h4>
-                                      <p>A communal dance performed in circles, often during weddings and celebrations, symbolizing unity and social cohesion.</p>
-                                  </div>
-                                  <div class="dance-item">
-                                      <h4><i class="fas fa-moon"></i> Apiti Dance</h4>
-                                      <p>A ceremonial dance performed during initiation rites and harvest celebrations, featuring rhythmic footwork and symbolic gestures.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <!-- Music & Instruments Section -->
-              <section id="music" class="culture-section bg-light">
-                  <div class="row align-items-center">
-                      <div class="col-lg-6 order-lg-2">
-                          <div class="culture-media">
-                              <img src="assets/img/lango-instruments.jpg" alt="Traditional Lango musical instruments" class="img-fluid rounded">
-                              <div class="media-caption">Traditional thumb piano (adungu) and drums</div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 order-lg-1">
-                          <div class="culture-content">
-                              <h2>Musical Heritage</h2>
-                              <p>Music is the heartbeat of Lango culture, accompanying every significant life event from birth to death. The traditional instruments produce unique sounds that carry the stories of the people.</p>
-                              
-                              <div class="music-features">
-                                  <div class="feature-box">
-                                      <div class="feature-icon">
-                                          <i class="fas fa-drum"></i>
-                                      </div>
-                                      <div class="feature-text">
-                                          <h5>Drums (Nanga)</h5>
-                                          <p>The sacred drums are considered the voice of the ancestors and are played during important ceremonies.</p>
-                                      </div>
-                                  </div>
-                                  <div class="feature-box">
-                                      <div class="feature-icon">
-                                          <i class="fas fa-music"></i>
-                                      </div>
-                                      <div class="feature-text">
-                                          <h5>Thumb Piano (Adungu)</h5>
-                                          <p>A melodic instrument made with metal tines attached to a wooden board, producing enchanting sounds.</p>
-                                      </div>
-                                  </div>
-                                  <div class="feature-box">
-                                      <div class="feature-icon">
-                                          <i class="fas fa-bullhorn"></i>
-                                      </div>
-                                      <div class="feature-text">
-                                          <h5>Horns (Alero)</h5>
-                                          <p>Animal horns used to communicate messages across distances and during special ceremonies.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              
-                              <div class="audio-sample mt-4">
-                                  <h5>Listen to Traditional Lango Music</h5>
-                                  <audio controls class="w-100">
-                                      <source src="assets/audio/lango-music-sample.mp3" type="audio/mpeg">
-                                      Your browser does not support the audio element.
-                                  </audio>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <!-- Folk Stories Section -->
-              <section id="stories" class="culture-section">
-                  <div class="row">
-                      <div class="col-lg-12 text-center">
-                          <h2>Wisdom Through Generations</h2>
-                          <p class="lead">Lango folk stories and proverbs have been the traditional method of teaching morals, history, and survival skills to younger generations.</p>
-                      </div>
-                  </div>
-                  
-                  <div class="row mt-5">
-                      <div class="col-lg-6">
-                          <div class="story-card">
-                              <div class="story-header">
-                                  <h4>The Hare and the Elephant</h4>
-                                  <div class="story-type">Folk Tale</div>
-                              </div>
-                              <div class="story-content">
-                                  <p>This popular tale tells how the small but clever hare outwitted the mighty elephant, teaching the value of intelligence over brute strength. The story is often told to children to encourage creative problem-solving.</p>
-                                  <blockquote>
-                                      "Size does not determine wisdom, just as the grass does not measure the rain."
-                                      <footer>- Lango Proverb</footer>
-                                  </blockquote>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div class="col-lg-6">
-                          <div class="story-card">
-                              <div class="story-header">
-                                  <h4>Common Lango Proverbs</h4>
-                                  <div class="story-type">Wisdom Sayings</div>
-                              </div>
-                              <div class="story-content">
-                                  <ul class="proverb-list">
-                                      <li>"A single stick cannot make a fire." <span>(Unity is strength)</span></li>
-                                      <li>"The eye that wanders will see wonders." <span>(Be observant)</span></li>
-                                      <li>"A child who does not listen will cut his finger on a sharp knife." <span>(Heed advice)</span></li>
-                                      <li>"The river does not flow backward." <span>(Life moves forward)</span></li>
-                                      <li>"When elephants fight, it is the grass that suffers." <span>(Innocent bystanders suffer in conflicts)</span></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="row mt-4">
-                      <div class="col-lg-12">
-                          <div class="story-telling">
-                              <h4>Oral Tradition Preservation</h4>
-                              <p>The Lango people have maintained their history and values through an unbroken chain of oral tradition. Elders (wang tic) are respected as custodians of this knowledge, gathering children around evening fires to share stories that teach:</p>
-                              <div class="tradition-values">
-                                  <span>Respect for elders</span>
-                                  <span>Community harmony</span>
-                                  <span>Courage in adversity</span>
-                                  <span>Importance of hard work</span>
-                                  <span>Connection to nature</span>
-                              </div>
-                              <div class="text-center mt-4">
-                                  <a href="#" class="btn btn-primary">Explore More Stories</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
+          <div class="col-lg-8 mx-auto text-center">
+              <h2 class="mb-3 text-primary">Lango’s Cultural Showcase</h2>
           </div>
+      </div>
+      <div class="row g-4 mt-4" id="gallery">
+          <div class="col-lg-4 col-md-6">
+              <div class="card border-0 shadow-sm rounded-3">
+                  <img src="assets/img/two.JPG" alt="Otuke Hills, birthplace of Lango’s 149 clans" class="card-img-top rounded-3 img-fluid gallery-img">
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+              <div class="card border-0 shadow-sm rounded-3">
+                  <img src="assets/img/two.JPG" alt="Lira Ceremonial Grounds for Won Nyaci ceremonies" class="card-img-top rounded-3 img-fluid gallery-img">
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+              <div class="card border-0 shadow-sm rounded-3">
+                  <img src="assets/img/two.JPG" alt="Barlonyo Memorial, honoring Lango’s resilience" class="card-img-top rounded-3 img-fluid gallery-img">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="card border-0 shadow-sm rounded-3">
+                  <img src="assets/img/two.JPG" alt="Lake Kwania, site of Lango’s spiritual rituals" class="card-img-top rounded-3 img-fluid gallery-img">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+              <div class="card border-0 shadow-sm rounded-3">
+                  <img src="assets/img/two.JPG" alt="Ngeta Hills, where Akii Bua’s legacy inspires" class="card-img-top rounded-3 img-fluid gallery-img">
+              </div>
+          </div>
+      </div>
+      <div class="text-center mt-5">
+          <a href="https://www.langoheritage.com" class="btn btn-primary px-5 py-3 rounded-pill" target="_blank">Explore More</a>
       </div>
   </div>
 </div>
-
-<!--===== CULTURAL HERITAGE AREA END =======-->
-
-  <!--===== CULTURAL GALLERY START =======-->
-  <div class="culture-gallery bg-light sp">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
-                <h2>Celebrating Lango’s Cultural Heritage</h2>
-                <p class="lead">Immerse yourself in the vibrant traditions of Lango through captivating moments captured in our cultural gallery.</p>
-            </div>
-        </div>
-
-        <div class="row gallery-grid mt-5" id="gallery">
-            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/dance-performance.jpg" data-pswp-width="1200" data-pswp-height="800">
-                <img src="assets/img/gallery/dance-performance.jpg" alt="Lango Okeme dance performance" class="img-fluid">
-                <div class="gallery-caption">Okeme dance at a cultural festival</div>
-            </div>
-            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/musicians.jpg" data-pswp-width="1200" data-pswp-height="800">
-                <img src="assets/img/gallery/musicians.jpg" alt="Lango traditional musicians" class="img-fluid">
-                <div class="gallery-caption">Elders playing traditional adungu instruments</div>
-            </div>
-            <div class="col-lg-4 col-md-6 gallery-item" data-src="assets/img/gallery/story-telling.jpg" data-pswp-width="1200" data-pswp-height="800">
-                <img src="assets/img/gallery/story-telling.jpg" alt="Elder storytelling in Lango" class="img-fluid">
-                <div class="gallery-caption">Storytelling session with Lango youth</div>
-            </div>
-            <div class="col-lg-6 col-md-6 gallery-item" data-src="assets/img/gallery/wedding-dance.jpg" data-pswp-width="1200" data-pswp-height="800">
-                <img src="assets/img/gallery/wedding-dance.jpg" alt="Lango wedding dance" class="img-fluid">
-                <div class="gallery-caption">Abuda dance at a traditional wedding</div>
-            </div>
-            <div class="col-lg-6 col-md-12 gallery-item" data-src="assets/img/gallery/festival.jpg" data-pswp-width="1200" data-pswp-height="800">
-                <img src="assets/img/gallery/festival.jpg" alt="Lango cultural festival" class="img-fluid">
-                <div class="gallery-caption">Annual Lango cultural festival gathering</div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5">
-            <a href="full-gallery.html" class="gallery-btn">Explore Full Gallery</a>
-        </div>
-    </div>
-</div>
+<!--===== CULTURAL GALLERY SECTION END =======-->
+<!--===== CULTURAL GALLERY SECTION END =======-->
 <!--===== CULTURAL GALLERY END =======-->
 
 <!-- Footer (Include your existing footer here) -->
