@@ -58,6 +58,8 @@ CSS LIST
 =<::::::::::::::::::::::::::=>
   FOOTER AREA CSS
 =<::::::::::::::::::::::::::=>
+  CUSTOM CSS
+=<::::::::::::::::::::::::::=>
 */
 /*
 ::::::::::::::::::::::::::
@@ -3027,10 +3029,10 @@ body.body {
  COMMON AREA CSS
 ::::::::::::::::::::::::::
 */
-.comon-body {
-  /*Pagination*/
-  /* video button  */
-}
+/* .comon-body {
+  /*Pagination*
+  /* video button  *
+} */
 .comon-body .theme-pagination ul {
   margin: 0;
   padding: 0;
@@ -3127,9 +3129,9 @@ body.body {
   border-bottom: 10px solid transparent;
 }
 
-.video-buttton9 {
-  /* video button  */
-}
+/* .video-buttton9 {
+  /* video button  *
+} */
 .video-buttton9 .video-play-button {
   position: relative;
   z-index: 10;
@@ -3204,9 +3206,9 @@ body.body {
   }
 }
 
-.video-paly10 {
-  /* video button  */
-}
+/* .video-paly10 {
+  /* video button  *
+} */
 .video-paly10 .video-play-button {
   position: relative;
   z-index: 10;
@@ -23617,4 +23619,17 @@ li.has-dropdown1 span {
   .cta .buttons {
     justify-content: center;
   }
+}
+
+/*
+::::::::::::::::::::::::::
+ CUSTOM CSS
+::::::::::::::::::::::::::
+*/
+.blue-text {
+  color: var(--ztc-bg-main-bg-1) !important;
+}
+
+.dark.single-footer-items h3 {
+  color: var(--ztc-bg-main-bg-4);
 }

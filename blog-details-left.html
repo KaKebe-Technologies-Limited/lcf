@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Blog Details Page</title>
+     <title>Folk Stories & Proverbs Page</title>
 
      <!--=====FAB ICON=======-->
      <link rel="shortcut icon" href="assets/img/logo/titel2.png" type="image/x-icon">
@@ -20,7 +20,8 @@
      <link rel="stylesheet" href="assets/css/mobile-menu.css">
      <link rel="stylesheet" href="assets/css/main.css">
 
-
+      <!-- Swiper CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
@@ -142,7 +143,6 @@
             transform: translateY(-10px);
         }
         .story-box img {
-            height: 200px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -229,6 +229,41 @@
                 height: 150px;
             }
         }
+
+        .swiper {
+          width: 100%;
+          height: 90vh;
+        }
+
+        .swiper-slide {
+          position: relative;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .overlay-text {
+          position: absolute;
+          top: 40%;
+          left: 5%;
+          color: white;
+          font-size: 1.2rem;
+          text-align: left;
+          text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+          padding: 1rem;
+          border-radius: 8px;
+          max-width: 60%; /* optional, to prevent it from stretching too wide */
+        }
+
+        .overlay-text h4 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .overlay-text p em {
+          font-style: italic;
+          color: #ffb74d;
+        }
+
      </style>
 </head>
 <body class="body tg-heading-subheading animation-style3">
@@ -518,8 +553,7 @@
   </div>
   <!--===== HERO AREA END =======-->
 
-  <!--===== STORIES & PROVERBS AREA START =======-->
-  <div class="stories-proverbs-area">
+    <div class="stories-proverbs-area">
       <div class="container">
           <div class="row">
               <div class="col-lg-10 mx-auto text-center">
@@ -527,81 +561,81 @@
                   <p class="lead mb-5">In the heart of Lango’s 15,570.7 km² homeland, 2.5 million voices carry stories and proverbs that echo through Otuke Hills and Lake Kwania. Join us by the fireside to hear the wisdom of 149 clans.</p>
               </div>
           </div>
+      </div>
+    </div>
+  
+  <!--===== STORIES & PROVERBS AREA START =======-->
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+            <h4>The Art of Lango Storytelling</h4>
+            <p>
+              By starlit skies, *wang tic* elders gather Lango’s clans to share tales of migration, heroism, and nature. These stories, passed through generations since the 16th-century journey from Abyssinia, bind 2.5 million souls in unity and pride.
+            </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>The Great Migration</h4>
+          <p>Led by Ongora Okubal, Lango’s clans crossed deserts to find Otuke Hills. A lone eagle guided them to fertile lands, whispering, “Here, your roots will grow.” Today, 149 clans honor this journey with songs.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>The Fisherman’s Courage</h4>
+          <p>On Lake Kwania, a young fisherman faced a raging storm to save his clan’s nets. His bravery, blessed by ancestors, calmed the waters, teaching Lango’s youth to face fear with heart.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>The Whispering Rock</h4>
+          <p>Got Ngeta Rock, standing tall, once spoke to a lost hunter, guiding him home with winds that sang of unity. Lango’s clans now climb its slopes, listening for ancestral wisdom.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>Proverbs of Wisdom</h4>
+          <p>
+            <em>“A single stick breaks, but a bundle stands strong.”</em> — Unity binds Lango’s clans.<br>
+            <em>“The river flows, yet the rock remains.”</em> — Resilience endures all storms.<br>
+            <em>“A seed sown in trust yields a harvest of hope.”</em> — Faith builds community.
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>Proverbs of Life</h4>
+          <p>
+            <em>“The eagle soars high but nests low.”</em> — Pride is grounded in humility.<br>
+            <em>“A story untold is a star unseen.”</em> — Share wisdom to light the path.
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url('assets/img/two.JPG')">
+        <div class="overlay-text">
+          <h4>The Heart of Lango’s Tales</h4>
+          <p>From Barlonyo’s healing grounds to Lira’s ceremonial fires, Lango’s stories and proverbs shape identity. They honor heroes like John Akii Bua, unite clans under *Won Nyaci*, and guide 2.5 million souls with ancestral wisdom.</p>
+        </div>
+      </div>
+
+    </div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <div class="stories-proverbs-area">
+      <div class="container">
           <div class="row g-4">
-              <!-- Introduction to Storytelling -->
-              <div class="col-lg-12">
-                  <div class="story-card" style="animation: fadeIn 1s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Lango storytelling under Ngeta Hills" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">The Art of Lango Storytelling</h4>
-                          <p class="card-text">By starlit skies, *wang tic* elders gather Lango’s clans to share tales of migration, heroism, and nature. These stories, passed through generations since the 16th-century journey from Abyssinia, bind 2.5 million souls in unity and pride.</p>
-                      </div>
-                  </div>
-              </div>
-              <!-- Folk Stories -->
-              <div class="col-lg-4 col-md-6">
-                  <div class="story-card" style="animation: fadeIn 1.2s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Migration story at Otuke Hills" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">The Great Migration</h4>
-                          <p class="card-text">Led by Ongora Okubal, Lango’s clans crossed deserts to find Otuke Hills. A lone eagle guided them to fertile lands, whispering, “Here, your roots will grow.” Today, 149 clans honor this journey with songs.</p>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                  <div class="story-card" style="animation: fadeIn 1.4s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Heroism story by Lake Kwania" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">The Fisherman’s Courage</h4>
-                          <p class="card-text">On Lake Kwania, a young fisherman faced a raging storm to save his clan’s nets. His bravery, blessed by ancestors, calmed the waters, teaching Lango’s youth to face fear with heart.</p>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                  <div class="story-card" style="animation: fadeIn 1.6s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Nature story at Got Ngeta" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">The Whispering Rock</h4>
-                          <p class="card-text">Got Ngeta Rock, standing tall, once spoke to a lost hunter, guiding him home with winds that sang of unity. Lango’s clans now climb its slopes, listening for ancestral wisdom.</p>
-                      </div>
-                  </div>
-              </div>
-              <!-- Proverbs -->
-              <div class="col-lg-6 col-md-6">
-                  <div class="proverb-card" style="animation: fadeIn 1.8s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Lango proverb shared by elders" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">Proverbs of Wisdom</h4>
-                          <p class="card-text">
-                              <em>“A single stick breaks, but a bundle stands strong.”</em> — Unity binds Lango’s clans.<br>
-                              <em>“The river flows, yet the rock remains.”</em> — Resilience endures all storms.<br>
-                              <em>“A seed sown in trust yields a harvest of hope.”</em> — Faith builds community.
-                          </p>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                  <div class="proverb-card" style="animation: fadeIn 2s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Lango proverb at clan gathering" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">Proverbs of Life</h4>
-                          <p class="card-text">
-                              <em>“The eagle soars high but nests low.”</em> — Pride is grounded in humility.<br>
-                              <em>“A story untold is a star unseen.”</em> — Share wisdom to light the path.
-                          </p>
-                      </div>
-                  </div>
-              </div>
-              <!-- Cultural Significance -->
-              <div class="col-lg-12">
-                  <div class="story-card" style="animation: fadeIn 2.2s ease-in-out;">
-                      <img src="assets/img/two.JPG" alt="Lango clans sharing stories at Barlonyo" class="story-img img-fluid">
-                      <div class="card-body">
-                          <h4 class="card-title">The Heart of Lango’s Tales</h4>
-                          <p class="card-text">From Barlonyo’s healing grounds to Lira’s ceremonial fires, Lango’s stories and proverbs shape identity. They honor heroes like John Akii Bua, unite clans under *Won Nyaci*, and guide 2.5 million souls with ancestral wisdom.</p>
-                      </div>
-                  </div>
-              </div>
               <!-- Call to Share -->
               <div class="col-lg-12">
                   <div class="share-form" style="animation: fadeIn 2.4s ease-in-out;">
@@ -644,7 +678,7 @@
           <div class="row">
               <div class="col-lg-6 m-auto text-center">
                   <div class="heading1 main">
-                      <h2>More Lango Tales</h2>
+                      <h2 class="text-primary">More Lango Tales</h2>
                   </div>
               </div>
           </div>
@@ -838,5 +872,27 @@
      <script src="assets/js/jquery.lineProgressbar.js"></script>
      <script src="assets/js/ripple-btn.js"></script>
      <script src="assets/js/main.js"></script>
+
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+		  dynamicBullets: true,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
 </body>
 </html>

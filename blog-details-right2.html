@@ -25,6 +25,9 @@
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
      <style>
+       .heading2 h2 {
+         color: #ff6f61;
+       }
        .lifestyle-area {
             padding: 80px 0;
             background: linear-gradient(135deg, #fff7f0, #ffe8d6);
@@ -58,8 +61,11 @@
             transform: translateY(-10px);
         }
         .lifestyle-img {
-            height: 400px;
+            width: 100%;
+            height: auto;
+            max-height: 400px;
             object-fit: cover;
+            overflow: hidden;
             filter: brightness(100%) contrast(115%);
             transition: transform 0.3s ease, filter 0.3s ease;
         }
@@ -96,8 +102,9 @@
             transform: translateY(-10px);
         }
         .lifestyle-box img {
-            height: 200px;
+            height: auto;
             object-fit: cover;
+            overflow: hidden;
             border-radius: 10px;
         }
         .lifestyle-box h4 a {
@@ -391,7 +398,7 @@
         <a class="menu-btn2" href="error.html">Get Involved <span><i class="fa-solid fa-arrow-right"></i></span></a>
       </div>
 
-      <div class="single-footer-items">
+      <div class="dark single-footer-items">
         <h3>Contact Us</h3>
         <div class="contact-box">
           <div class="icon">
@@ -434,7 +441,7 @@
                       <div class="main-heading">
                         <h1>Lifestyle In Lango.</h1>
                           <div class="space16"></div>
-                          <span class="span"><img src="assets/img/icons/span2.png" alt=""> <a href="index.html">Home</a> <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Blog <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Blog Details Left</span>
+                          <span class="span"><img src="assets/img/icons/span2.png" alt=""> <a href="index.html">Home</a> <span class="arrow"><i class="fa-regular fa-angle-right"></i></span> Lifestyle</span>
                       </div>
                     </div>
                   </div>
@@ -466,7 +473,7 @@
                       </div>
                       <div class="row g-4">
                           <!-- Campfires -->
-                          <div class="col-lg-12">
+                          <div class="col-lg-6 col-md-6">
                               <div class="lifestyle-card fade-in" style="animation-delay: 0.2s;">
                                   <img src="assets/img/two.JPG" alt="Lango campfires under starlit skies" class="lifestyle-img img-fluid">
                                   <div class="card-body">
@@ -496,7 +503,7 @@
                               </div>
                           </div>
                           <!-- Festivities -->
-                          <div class="col-lg-12">
+                          <div class="col-lg-6 col-md-6">
                               <div class="lifestyle-card fade-in" style="animation-delay: 0.8s;">
                                   <img src="assets/img/two.JPG" alt="Lango festivities with Okeme dances" class="lifestyle-img img-fluid">
                                   <div class="card-body">
@@ -639,7 +646,7 @@
           <div class="row">
             <!-- About Lango -->
             <div class="col-lg-4 col-md-6 col-12">
-              <div class="single-footer-items footer-logo-area">
+              <div class="dark single-footer-items footer-logo-area">
                 <div class="footer-logo">
                   <a href="index.html">
                     <img src="assets/img/logo/logo.png" alt="Lango Sub-Region Logo">
@@ -660,7 +667,7 @@
 
             <!-- Explore Lango -->
             <div class="col-lg-2 col-md-6 col-12">
-              <div class="single-footer-items">
+              <div class="dark single-footer-items">
                 <h3>Explore Lango</h3>
                 <ul class="menu-list">
                   <li><a href="about.html">About Lango</a></li>
@@ -674,7 +681,7 @@
 
             <!-- Quick Links -->
             <div class="col-lg-3 col-md-6 col-12">
-              <div class="single-footer-items">
+              <div class="dark single-footer-items">
                 <h3>Quick Links</h3>
                 <ul class="menu-list">
                   <li><a href="service.html">Districts</a></li>
@@ -688,7 +695,7 @@
 
             <!-- Contact Us -->
             <div class="col-lg-3 col-md-6 col-12">
-              <div class="single-footer-items">
+              <div class="dark single-footer-items">
                 <h3>Contact Us</h3>
                 <div class="contact-box">
                   <div class="icon">
