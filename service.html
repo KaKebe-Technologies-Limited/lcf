@@ -20,11 +20,48 @@
      <link rel="stylesheet" href="assets/css/mobile-menu.css">
      <link rel="stylesheet" href="assets/css/main.css">
 
+     <!-- Swiper CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <style>
+      #districtMenu .list-group-item {
+        cursor: pointer;
+      }
+      #districtMenu .list-group-item.active {
+        background-color: #004080;
+        color: white;
+        font-weight: bold;
+      }
+      .district-info {
+        display: none;
+      }
+      .district-info.active {
+        display: block;
+      }
+      /*
+      .district-images img {
+        max-width: 33.3%;
+        height: auto;
+        margin-bottom: 1rem;
+      } */
+      .swiper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+      }
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+        border-radius: 10px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    </style>
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
-     <style>
+<!--      <style>
         .accordion-button {
           background-color: #f8f9fa;
           font-weight: 600;
@@ -35,8 +72,7 @@
           border-top: 1px solid #dee2e6;
           border-radius: 0 0 0.375rem 0.375rem;
         }
-
-     </style>
+     </style> -->
 </head>
 <body class="body tg-heading-subheading animation-style3">
 
@@ -319,378 +355,547 @@
 
         <!--=====HERO AREA END=======-->
 
-       <!--=====SERVICE AREA START=======-->
-<div class="servcie2 service-page-sec">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        
-        <!-- <div class="container py-5">
-          <h2 class="text-center mb-4">Districts in Lango Sub-Region</h2>
-        
-          <div class="accordion" id="accordionDistricts">
-        
-            <div class="accordion-item mb-3">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Alebtong District
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionDistricts">
-                <div class="accordion-body">
-                  <div class="row g-4 align-items-center">
-                    <div class="col-md-4">
-                      <img src="images/alebtong.jpg" alt="Alebtong" class="img-fluid rounded shadow-sm">
-                    </div>
-                    <div class="col-md-8">
-                      <p class="mb-0">
-                        Alebtong District is one of the new districts in Uganda located in the Northern Region. It was carved out of Lira District in 2010 and has grown steadily in administrative capacity and local governance. The district is home to vibrant communities, with agriculture being the primary economic activity.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-            
-        
-          </div>
-        </div> -->
-        
-        <div class="accordion" id="langoDistrictsAccordion">
+        <!--=====TAB BAR SERVICE AREA START=======-->
+        <div class="container py-5">
+          <h1 class="text-center mb-4">Districts in Lango Sub-Region</h1>
           <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAlebtong" aria-expanded="true" aria-controls="collapseAlebtong">
-                    Alebtong District
-                  </a>
-                </h4>
-                <div id="collapseAlebtong" class="accordion-collapse collapse show" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/alebtong-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/alebtong-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/alebtong-3.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="space16"></div>
-                    <p>Alebtong, carved from Lira District in 2010, spans 1,527 km² of fertile plains in the Lango sub-region. Its population in 2024 is estimated at ~254,000 (51% female, 49% male; 50% under 18), up from 227,541 in 2014, reflecting a 2.9% annual growth rate. Agriculture dominates, with sorghum, cassava, and groundnuts as staple crops, alongside livestock rearing. Small-scale trade thrives in markets like Aloi Town Council. Culturally, Alebtong hosts vibrant Lango dances and festivals, preserving Nilotic traditions. Key highlights include the Alebtong Boma ground, where malaria prevention campaigns using treated mosquito nets were demonstrated in 2019, and the leadership of women like MP Dorcus Acen. Challenges include teenage pregnancies (2,190 cases in 2021) and land disputes fueled by population growth. Infrastructure, such as the Agweng-Barjobi road, needs upgrades. Alebtong’s resilience shines through community-led initiatives for education and health.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+              <ul class="list-group" id="districtMenu">
+                <li class="list-group-item active" data-target="#alebtong">Alebtong</li>
+                <li class="list-group-item" data-target="#amolatar">Amolatar</li>
+                <li class="list-group-item" data-target="#apac">Apac</li>
+                <li class="list-group-item" data-target="#dokolo">Dokolo</li>
+                <li class="list-group-item" data-target="#kole">Kole</li>
+                <li class="list-group-item" data-target="#kwania">Kwania</li>
+                <li class="list-group-item" data-target="#lira">Lira</li>
+                <li class="list-group-item" data-target="#otuke">Otuke</li>
+                <li class="list-group-item" data-target="#oyam">Oyam</li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmolatar" aria-expanded="false" aria-controls="collapseAmolatar">
-                    Amolatar District
-                  </a>
-                </h4>
-                <div id="collapseAmolatar" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/amolatar-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/amolatar-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/amolatar-3.png" alt="">
-                          </div>
-                        </div>
+            <div class="col-lg-9 col-md-8">
+              <div id="districtContent">
+                <div id="alebtong" class="district-info active">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/alebtong-1.jpg" alt="Alebtong"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/alebtong-2.jpg" alt="Alebtong"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/alebtong-3.jpg" alt="Alebtong"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Amolatar, formed in 2005 from Lira District, covers 1,758 km² along Lake Kyoga’s shores. Its 2024 population is ~190,000 (est., 51% female, 49% male; 51% under 18), growing from 147,166 in 2014. Fishing and rice cultivation drive the economy, with commercial fishing from Lake Kyoga and crops like millet supporting subsistence agriculture. The Amolatar Monument, marking Uganda’s geographic center, is a key landmark. Cultural festivals feature Lango music and dance, while Awelo Secondary School is a notable educational institution. Highlights include women’s political leadership, with MP Doreen Amule, and community health initiatives. Challenges include high teenage pregnancy rates (1,939 cases in 2021) and malaria (26,228 cases in 2023). Poor road connectivity, like the Dokolo-Amolatar road, hinders development. Amolatar’s fishing communities and cultural heritage make it a vibrant district despite these issues.</p>
                   </div>
+                  <p>Alebtong, carved from Lira District in 2010, spans 1,527 km² of fertile plains in the Lango sub-region. Its population in 2024 is estimated at ~254,000 (51% female, 49% male; 50% under 18), up from 227,541 in 2014, reflecting a 2.9% annual growth rate. Agriculture dominates, with sorghum, cassava, and groundnuts as staple crops, alongside livestock rearing. Small-scale trade thrives in markets like Aloi Town Council. Culturally, Alebtong hosts vibrant Lango dances and festivals, preserving Nilotic traditions. Key highlights include the Alebtong Boma ground, where malaria prevention campaigns using treated mosquito nets were demonstrated in 2019, and the leadership of women like MP Dorcus Acen. Challenges include teenage pregnancies (2,190 cases in 2021) and land disputes fueled by population growth. Infrastructure, such as the Agweng-Barjobi road, needs upgrades. Alebtong’s resilience shines through community-led initiatives for education and health.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseApac" aria-expanded="false" aria-controls="collapseApac">
-                    Apac District
-                  </a>
-                </h4>
-                <div id="collapseApac" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/apac-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/apac-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/apac-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="amolatar" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/amolatar-1.jpg" alt="Amolatar"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/amolatar-2.jpg" alt="Amolatar"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/amolatar-3.jpg" alt="Amolatar"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Apac, a historic Lango district, spans 2,026 km² and serves as an agricultural powerhouse. Its 2024 population is ~450,000 (est., 51% female, 49% male; 50% under 18), up from 368,600 in 2014. Cotton, millet, and maize farming, alongside cattle rearing, fuel the economy. Apac General Hospital, serving 40,000 people, faces staffing shortages but is vital. Culturally, Apac hosts Lango traditional ceremonies, with clans preserving Nilotic heritage. Highlights include the bicycle initiative for HIV/AIDS treatment access, boosting health service reach, and women leaders like MP Betty Awor Engola. Challenges include poor roads (e.g., Apac-Teboke), teenage pregnancies (1,714 cases in 2021), and a 7.4% HIV prevalence rate. Apac’s agricultural wealth and community resilience position it as a key Lango district, though infrastructure upgrades are needed.</p>
                   </div>
+                  <p>Amolatar, formed in 2005 from Lira District, covers 1,758 km² along Lake Kyoga’s shores. Its 2024 population is ~190,000 (est., 51% female, 49% male; 51% under 18), growing from 147,166 in 2014. Fishing and rice cultivation drive the economy, with commercial fishing from Lake Kyoga and crops like millet supporting subsistence agriculture. The Amolatar Monument, marking Uganda’s geographic center, is a key landmark. Cultural festivals feature Lango music and dance, while Awelo Secondary School is a notable educational institution. Highlights include women’s political leadership, with MP Doreen Amule, and community health initiatives. Challenges include high teenage pregnancy rates (1,939 cases in 2021) and malaria (26,228 cases in 2023). Poor road connectivity, like the Dokolo-Amolatar road, hinders development. Amolatar’s fishing communities and cultural heritage make it a vibrant district despite these issues.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDokolo" aria-expanded="false" aria-controls="collapseDokolo">
-                    Dokolo District
-                  </a>
-                </h4>
-                <div id="collapseDokolo" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/dokolo-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/dokolo-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/dokolo-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="apac" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/apac-1.jpg" alt="Apac"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/apac-2.jpg" alt="Apac"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/apac-3.jpg" alt="Apac"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Dokolo, along Lake Kwania, covers 1,071 km² and is known for its fishing communities. Its 2024 population is ~230,000 (est., 51% female, 49% male; 51% under 18), up from 183,000 in 2014. Fishing and crops like sorghum and beans sustain the economy, with trade in Dokolo Town Council. Dokolo Technical School and Dokolo Girls’ School are educational landmarks. Culturally, Dokolo hosts Lango festivals, with historical ties to aiding deposed kings in the 19th century. Highlights include MP Cecilia Atim Ogwal’s long tenure and flood-preparedness initiatives needing 300 boats. Challenges include teenage pregnancies (2,363 cases in 2021), malaria (33,673 cases in 2023), and poor school performance. Dokolo’s strategic location on the Tororo-Lira Highway offers growth potential if infrastructure improves.</p>
                   </div>
+                  <p>Apac, a historic Lango district, spans 2,026 km² and serves as an agricultural powerhouse. Its 2024 population is ~450,000 (est., 51% female, 49% male; 50% under 18), up from 368,600 in 2014. Cotton, millet, and maize farming, alongside cattle rearing, fuel the economy. Apac General Hospital, serving 40,000 people, faces staffing shortages but is vital. Culturally, Apac hosts Lango traditional ceremonies, with clans preserving Nilotic heritage. Highlights include the bicycle initiative for HIV/AIDS treatment access, boosting health service reach, and women leaders like MP Betty Awor Engola. Challenges include poor roads (e.g., Apac-Teboke), teenage pregnancies (1,714 cases in 2021), and a 7.4% HIV prevalence rate. Apac’s agricultural wealth and community resilience position it as a key Lango district, though infrastructure upgrades are needed.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKole" aria-expanded="false" aria-controls="collapseKole">
-                    Kole District
-                  </a>
-                </h4>
-                <div id="collapseKole" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/kole-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/kole-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/kole-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="dokolo" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/dokolo-1.jpg" alt="Dokolo"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/dokolo-2.jpg" alt="Dokolo"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/dokolo-3.jpg" alt="Dokolo"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Kole, known for its wetlands, spans 1,087 km² and supports rice farming and fishing. Its 2024 population is ~300,000 (est., 51% female, 49% male; 50% under 18), up from 239,300 in 2014. Agriculture, including maize and millet, and small-scale trade in Alito Sub-county drive the economy. Kole’s cultural heritage includes Lango oral traditions and dances. Highlights include MP Judith Alyek’s advocacy and maternal health projects by WLEDE. The district faces challenges like teenage pregnancies (3,186 cases in 2021), malaria (17,852 cases in 2023), and HIV/AIDS stigma. Poor roads and fake seeds limit agricultural potential. Kole’s wetlands offer eco-tourism opportunities, and community resilience is evident in health and education initiatives, though infrastructure upgrades are critical.</p>
                   </div>
+                  <p>Dokolo, along Lake Kwania, covers 1,071 km² and is known for its fishing communities. Its 2024 population is ~230,000 (est., 51% female, 49% male; 51% under 18), up from 183,000 in 2014. Fishing and crops like sorghum and beans sustain the economy, with trade in Dokolo Town Council. Dokolo Technical School and Dokolo Girls’ School are educational landmarks. Culturally, Dokolo hosts Lango festivals, with historical ties to aiding deposed kings in the 19th century. Highlights include MP Cecilia Atim Ogwal’s long tenure and flood-preparedness initiatives needing 300 boats. Challenges include teenage pregnancies (2,363 cases in 2021), malaria (33,673 cases in 2023), and poor school performance. Dokolo’s strategic location on the Tororo-Lira Highway offers growth potential if infrastructure improves.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKwania" aria-expanded="false" aria-controls="collapseKwania">
-                    Kwania District
-                  </a>
-                </h4>
-                <div id="collapseKwania" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/kwania-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/kwania-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/kwania-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="kole" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/kole-1.jpg" alt="Kole"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/kole-2.jpg" alt="Kole"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/kole-3.jpg" alt="Kole"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Kwania, a newer district formed in 2018, covers 1,092 km² along Lake Kwania. Its 2024 population is ~200,000 (est., 51% female, 49% male; 51% under 18), up from ~153,000 in 2014. Fishing and maize farming dominate, with trade in Aduku Town Council. The bicycle initiative for HIV/AIDS patients, improving access to ARVs, is a flagship program. Culturally, Kwania preserves Lango traditions through clan gatherings. Highlights include women leaders like Judith Atek Ilwak and low teenage pregnancy rates in 2024. Challenges include a 5.6% HIV prevalence, land conflicts, and poor roads. Kwania’s fishing communities and innovative health programs position it for growth, but infrastructure and education need attention.</p>
                   </div>
+                  <p>Kole, known for its wetlands, spans 1,087 km² and supports rice farming and fishing. Its 2024 population is ~300,000 (est., 51% female, 49% male; 50% under 18), up from 239,300 in 2014. Agriculture, including maize and millet, and small-scale trade in Alito Sub-county drive the economy. Kole’s cultural heritage includes Lango oral traditions and dances. Highlights include MP Judith Alyek’s advocacy and maternal health projects by WLEDE. The district faces challenges like teenage pregnancies (3,186 cases in 2021), malaria (17,852 cases in 2023), and HIV/AIDS stigma. Poor roads and fake seeds limit agricultural potential. Kole’s wetlands offer eco-tourism opportunities, and community resilience is evident in health and education initiatives, though infrastructure upgrades are critical.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLira" aria-expanded="false" aria-controls="collapseLira">
-                    Lira District
-                  </a>
-                </h4>
-                <div id="collapseLira" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/lira-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/lira-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/lira-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="kwania" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/kwania-1.jpg" alt="Kwania"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/kwania-2.jpg" alt="Kwania"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/kwania-3.jpg" alt="Kwania"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Lira, the commercial heart of Lango, spans 1,326 km² and includes Lira City. Its 2024 population is 559,513 (51% female, 49% male; 50% under 18). Diverse agriculture (sorghum, beans) and services, including markets like Juba, drive the economy. Lira Regional Referral Hospital serves multiple districts but faces congestion. Culturally, Lira hosts the Lango Cultural Foundation, with the rhino as its symbol. Highlights include by-laws addressing sexual abuse and MP Joy Atim Ongom’s leadership. Challenges include teenage pregnancies (3,871 cases in 2021), domestic violence (1,180 cases in 2020), and land disputes. Lira’s urban vibrancy, educational institutions, and cultural events make it a regional hub, though health and infrastructure strain persists.</p>
                   </div>
+                  <p>Kwania, a newer district formed in 2018, covers 1,092 km² along Lake Kwania. Its 2024 population is ~200,000 (est., 51% female, 49% male; 51% under 18), up from ~153,000 in 2014. Fishing and maize farming dominate, with trade in Aduku Town Council. The bicycle initiative for HIV/AIDS patients, improving access to ARVs, is a flagship program. Culturally, Kwania preserves Lango traditions through clan gatherings. Highlights include women leaders like Judith Atek Ilwak and low teenage pregnancy rates in 2024. Challenges include a 5.6% HIV prevalence, land conflicts, and poor roads. Kwania’s fishing communities and innovative health programs position it for growth, but infrastructure and education need attention.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOtuke" aria-expanded="false" aria-controls="collapseOtuke">
-                    Otuke District
-                  </a>
-                </h4>
-                <div id="collapseOtuke" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/otuke-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/otuke-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/otuke-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="lira" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/lira-1.jpg" alt="Lira"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/lira-2.jpg" alt="Lira"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/lira-3.jpg" alt="Lira"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Otuke, a semi-arid district of 1,547 km², has a 2024 population of ~130,000 (est., 51% female, 49% male; 50% under 18), up from 104,300 in 2014. Cassava and groundnut farming dominate, with over 90% of residents in agriculture. Livestock production needs boosting due to past cattle raids. Otuke’s cultural heritage includes Lango oral histories. Highlights include MP Silvia Akello’s advocacy and a 5.5% HIV prevalence rate, lower than Apac’s. Challenges include high malaria rates (72% test positivity in 2023), teenage pregnancies (1,506 cases in 2021), and poor roads like Agweng-Barjobi. Otuke’s agricultural focus and community spirit offer potential, but climate resilience and infrastructure are critical for growth.</p>
                   </div>
+                  <p>Lira, the commercial heart of Lango, spans 1,326 km² and includes Lira City. Its 2024 population is 559,513 (51% female, 49% male; 50% under 18). Diverse agriculture (sorghum, beans) and services, including markets like Juba, drive the economy. Lira Regional Referral Hospital serves multiple districts but faces congestion. Culturally, Lira hosts the Lango Cultural Foundation, with the rhino as its symbol. Highlights include by-laws addressing sexual abuse and MP Joy Atim Ongom’s leadership. Challenges include teenage pregnancies (3,871 cases in 2021), domestic violence (1,180 cases in 2020), and land disputes. Lira’s urban vibrancy, educational institutions, and cultural events make it a regional hub, though health and infrastructure strain persists.</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="accordion-item">
-                <h4 class="accordion-header">
-                  <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOyam" aria-expanded="false" aria-controls="collapseOyam">
-                    Oyam District
-                  </a>
-                </h4>
-                <div id="collapseOyam" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
-                  <div class="accordion-body">
-                    <div class="images">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="image">
-                            <img src="assets/img/districts/oyam-1.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/oyam-2.png" alt="">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="space30"></div>
-                          <div class="image">
-                            <img src="assets/img/districts/oyam-3.png" alt="">
-                          </div>
-                        </div>
+
+                <div id="otuke" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/otuke-1.jpg" alt="Otuke"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/otuke-2.jpg" alt="Otuke"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/otuke-3.jpg" alt="Otuke"></div>
                       </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="space16"></div>
-                    <p>Oyam, spanning 2,196 km², is a leading agricultural district with a 2024 population of 497,736 (51% female, 49% male; 50% under 18). Simsim, soybeans, and cotton thrive, but fake seeds and low commodity prices pose challenges. Trade is growing in Oyam Town Council. Culturally, Oyam hosts Lango festivals and clan gatherings. Highlights include Abok Seed Secondary School’s education efforts and MP Santa Alum Ogwang’s leadership. The district faces high teenage pregnancy rates (4,448 cases in 2021), malaria (42,874 cases in 2023), and land conflicts. Poor roads limit PDM impact. Oyam’s three growing seasons offer immense potential, but factories and infrastructure are needed to boost agro-processing.</p>
                   </div>
+                  <p>Otuke, a semi-arid district of 1,547 km², has a 2024 population of ~130,000 (est., 51% female, 49% male; 50% under 18), up from 104,300 in 2014. Cassava and groundnut farming dominate, with over 90% of residents in agriculture. Livestock production needs boosting due to past cattle raids. Otuke’s cultural heritage includes Lango oral histories. Highlights include MP Silvia Akello’s advocacy and a 5.5% HIV prevalence rate, lower than Apac’s. Challenges include high malaria rates (72% test positivity in 2023), teenage pregnancies (1,506 cases in 2021), and poor roads like Agweng-Barjobi. Otuke’s agricultural focus and community spirit offer potential, but climate resilience and infrastructure are critical for growth.</p>
                 </div>
+
+                <div id="oyam" class="district-info">
+                  <div class="district-images">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/districts/oyam-1.jpg" alt="Oyam"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/oyam-2.jpg" alt="Oyam"></div>
+                        <div class="swiper-slide"><img src="assets/img/districts/oyam-3.jpg" alt="Oyam"></div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                  <p>Oyam, spanning 2,196 km², is a leading agricultural district with a 2024 population of 497,736 (51% female, 49% male; 50% under 18). Simsim, soybeans, and cotton thrive, but fake seeds and low commodity prices pose challenges. Trade is growing in Oyam Town Council. Culturally, Oyam hosts Lango festivals and clan gatherings. Highlights include Abok Seed Secondary School’s education efforts and MP Santa Alum Ogwang’s leadership. The district faces high teenage pregnancy rates (4,448 cases in 2021), malaria (42,874 cases in 2023), and land conflicts. Poor roads limit PDM impact. Oyam’s three growing seasons offer immense potential, but factories and infrastructure are needed to boost agro-processing.</p>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-      
-      </div>
-    </div>
-  </div>
-</div>
-<!--=====SERVICE AREA END=======-->
+        <!--=====TAB BAR SERVICE AREA END=======-->
+
+        <!--=====SERVICE AREA START=======-->
+<!--         <div class="servcie2 service-page-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12"> -->
+                
+                <!-- <div class="container py-5">
+                  <h2 class="text-center mb-4">Districts in Lango Sub-Region</h2>
+                
+                  <div class="accordion" id="accordionDistricts">
+                
+                    <div class="accordion-item mb-3">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Alebtong District
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionDistricts">
+                        <div class="accordion-body">
+                          <div class="row g-4 align-items-center">
+                            <div class="col-md-4">
+                              <img src="images/alebtong.jpg" alt="Alebtong" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-md-8">
+                              <p class="mb-0">
+                                Alebtong District is one of the new districts in Uganda located in the Northern Region. It was carved out of Lira District in 2010 and has grown steadily in administrative capacity and local governance. The district is home to vibrant communities, with agriculture being the primary economic activity.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                    
+                
+                  </div>
+                </div> -->
+<!--                 
+                <div class="accordion" id="langoDistrictsAccordion">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAlebtong" aria-expanded="true" aria-controls="collapseAlebtong">
+                            Alebtong District
+                          </a>
+                        </h4>
+                        <div id="collapseAlebtong" class="accordion-collapse collapse show" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/alebtong-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/alebtong-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/alebtong-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Alebtong, carved from Lira District in 2010, spans 1,527 km² of fertile plains in the Lango sub-region. Its population in 2024 is estimated at ~254,000 (51% female, 49% male; 50% under 18), up from 227,541 in 2014, reflecting a 2.9% annual growth rate. Agriculture dominates, with sorghum, cassava, and groundnuts as staple crops, alongside livestock rearing. Small-scale trade thrives in markets like Aloi Town Council. Culturally, Alebtong hosts vibrant Lango dances and festivals, preserving Nilotic traditions. Key highlights include the Alebtong Boma ground, where malaria prevention campaigns using treated mosquito nets were demonstrated in 2019, and the leadership of women like MP Dorcus Acen. Challenges include teenage pregnancies (2,190 cases in 2021) and land disputes fueled by population growth. Infrastructure, such as the Agweng-Barjobi road, needs upgrades. Alebtong’s resilience shines through community-led initiatives for education and health.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmolatar" aria-expanded="false" aria-controls="collapseAmolatar">
+                            Amolatar District
+                          </a>
+                        </h4>
+                        <div id="collapseAmolatar" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/amolatar-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/amolatar-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/amolatar-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Amolatar, formed in 2005 from Lira District, covers 1,758 km² along Lake Kyoga’s shores. Its 2024 population is ~190,000 (est., 51% female, 49% male; 51% under 18), growing from 147,166 in 2014. Fishing and rice cultivation drive the economy, with commercial fishing from Lake Kyoga and crops like millet supporting subsistence agriculture. The Amolatar Monument, marking Uganda’s geographic center, is a key landmark. Cultural festivals feature Lango music and dance, while Awelo Secondary School is a notable educational institution. Highlights include women’s political leadership, with MP Doreen Amule, and community health initiatives. Challenges include high teenage pregnancy rates (1,939 cases in 2021) and malaria (26,228 cases in 2023). Poor road connectivity, like the Dokolo-Amolatar road, hinders development. Amolatar’s fishing communities and cultural heritage make it a vibrant district despite these issues.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseApac" aria-expanded="false" aria-controls="collapseApac">
+                            Apac District
+                          </a>
+                        </h4>
+                        <div id="collapseApac" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/apac-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/apac-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/apac-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Apac, a historic Lango district, spans 2,026 km² and serves as an agricultural powerhouse. Its 2024 population is ~450,000 (est., 51% female, 49% male; 50% under 18), up from 368,600 in 2014. Cotton, millet, and maize farming, alongside cattle rearing, fuel the economy. Apac General Hospital, serving 40,000 people, faces staffing shortages but is vital. Culturally, Apac hosts Lango traditional ceremonies, with clans preserving Nilotic heritage. Highlights include the bicycle initiative for HIV/AIDS treatment access, boosting health service reach, and women leaders like MP Betty Awor Engola. Challenges include poor roads (e.g., Apac-Teboke), teenage pregnancies (1,714 cases in 2021), and a 7.4% HIV prevalence rate. Apac’s agricultural wealth and community resilience position it as a key Lango district, though infrastructure upgrades are needed.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDokolo" aria-expanded="false" aria-controls="collapseDokolo">
+                            Dokolo District
+                          </a>
+                        </h4>
+                        <div id="collapseDokolo" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/dokolo-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/dokolo-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/dokolo-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Dokolo, along Lake Kwania, covers 1,071 km² and is known for its fishing communities. Its 2024 population is ~230,000 (est., 51% female, 49% male; 51% under 18), up from 183,000 in 2014. Fishing and crops like sorghum and beans sustain the economy, with trade in Dokolo Town Council. Dokolo Technical School and Dokolo Girls’ School are educational landmarks. Culturally, Dokolo hosts Lango festivals, with historical ties to aiding deposed kings in the 19th century. Highlights include MP Cecilia Atim Ogwal’s long tenure and flood-preparedness initiatives needing 300 boats. Challenges include teenage pregnancies (2,363 cases in 2021), malaria (33,673 cases in 2023), and poor school performance. Dokolo’s strategic location on the Tororo-Lira Highway offers growth potential if infrastructure improves.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKole" aria-expanded="false" aria-controls="collapseKole">
+                            Kole District
+                          </a>
+                        </h4>
+                        <div id="collapseKole" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/kole-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/kole-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/kole-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Kole, known for its wetlands, spans 1,087 km² and supports rice farming and fishing. Its 2024 population is ~300,000 (est., 51% female, 49% male; 50% under 18), up from 239,300 in 2014. Agriculture, including maize and millet, and small-scale trade in Alito Sub-county drive the economy. Kole’s cultural heritage includes Lango oral traditions and dances. Highlights include MP Judith Alyek’s advocacy and maternal health projects by WLEDE. The district faces challenges like teenage pregnancies (3,186 cases in 2021), malaria (17,852 cases in 2023), and HIV/AIDS stigma. Poor roads and fake seeds limit agricultural potential. Kole’s wetlands offer eco-tourism opportunities, and community resilience is evident in health and education initiatives, though infrastructure upgrades are critical.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKwania" aria-expanded="false" aria-controls="collapseKwania">
+                            Kwania District
+                          </a>
+                        </h4>
+                        <div id="collapseKwania" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/kwania-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/kwania-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/kwania-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Kwania, a newer district formed in 2018, covers 1,092 km² along Lake Kwania. Its 2024 population is ~200,000 (est., 51% female, 49% male; 51% under 18), up from ~153,000 in 2014. Fishing and maize farming dominate, with trade in Aduku Town Council. The bicycle initiative for HIV/AIDS patients, improving access to ARVs, is a flagship program. Culturally, Kwania preserves Lango traditions through clan gatherings. Highlights include women leaders like Judith Atek Ilwak and low teenage pregnancy rates in 2024. Challenges include a 5.6% HIV prevalence, land conflicts, and poor roads. Kwania’s fishing communities and innovative health programs position it for growth, but infrastructure and education need attention.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLira" aria-expanded="false" aria-controls="collapseLira">
+                            Lira District
+                          </a>
+                        </h4>
+                        <div id="collapseLira" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/lira-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/lira-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/lira-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Lira, the commercial heart of Lango, spans 1,326 km² and includes Lira City. Its 2024 population is 559,513 (51% female, 49% male; 50% under 18). Diverse agriculture (sorghum, beans) and services, including markets like Juba, drive the economy. Lira Regional Referral Hospital serves multiple districts but faces congestion. Culturally, Lira hosts the Lango Cultural Foundation, with the rhino as its symbol. Highlights include by-laws addressing sexual abuse and MP Joy Atim Ongom’s leadership. Challenges include teenage pregnancies (3,871 cases in 2021), domestic violence (1,180 cases in 2020), and land disputes. Lira’s urban vibrancy, educational institutions, and cultural events make it a regional hub, though health and infrastructure strain persists.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOtuke" aria-expanded="false" aria-controls="collapseOtuke">
+                            Otuke District
+                          </a>
+                        </h4>
+                        <div id="collapseOtuke" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/otuke-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/otuke-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/otuke-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Otuke, a semi-arid district of 1,547 km², has a 2024 population of ~130,000 (est., 51% female, 49% male; 50% under 18), up from 104,300 in 2014. Cassava and groundnut farming dominate, with over 90% of residents in agriculture. Livestock production needs boosting due to past cattle raids. Otuke’s cultural heritage includes Lango oral histories. Highlights include MP Silvia Akello’s advocacy and a 5.5% HIV prevalence rate, lower than Apac’s. Challenges include high malaria rates (72% test positivity in 2023), teenage pregnancies (1,506 cases in 2021), and poor roads like Agweng-Barjobi. Otuke’s agricultural focus and community spirit offer potential, but climate resilience and infrastructure are critical for growth.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="accordion-item">
+                        <h4 class="accordion-header">
+                          <a href="service-details.html" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOyam" aria-expanded="false" aria-controls="collapseOyam">
+                            Oyam District
+                          </a>
+                        </h4>
+                        <div id="collapseOyam" class="accordion-collapse collapse" data-bs-parent="#langoDistrictsAccordion">
+                          <div class="accordion-body">
+                            <div class="images">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="image">
+                                    <img src="assets/img/districts/oyam-1.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/oyam-2.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="space30"></div>
+                                  <div class="image">
+                                    <img src="assets/img/districts/oyam-3.png" alt="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="space16"></div>
+                            <p>Oyam, spanning 2,196 km², is a leading agricultural district with a 2024 population of 497,736 (51% female, 49% male; 50% under 18). Simsim, soybeans, and cotton thrive, but fake seeds and low commodity prices pose challenges. Trade is growing in Oyam Town Council. Culturally, Oyam hosts Lango festivals and clan gatherings. Highlights include Abok Seed Secondary School’s education efforts and MP Santa Alum Ogwang’s leadership. The district faces high teenage pregnancy rates (4,448 cases in 2021), malaria (42,874 cases in 2023), and land conflicts. Poor roads limit PDM impact. Oyam’s three growing seasons offer immense potential, but factories and infrastructure are needed to boost agro-processing.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!--=====SERVICE AREA END=======-->
 
 
      <!--===== FOOTER AREA START =======-->
@@ -801,21 +1006,74 @@
       </div>
     </div>
  <!--===== FOOTER AREA END =======-->
-   <script src="assets/js/bootstrap.min.js"></script>
-     <script src="assets/js/aos.js"></script>
-     <script src="assets/js/fontawesome.js"></script>
-     <script src="assets/js/jquery.countup.js"></script>
-     <script src="assets/js/mobile-menu.js"></script>
-     <script src="assets/js/jquery.magnific-popup.js"></script>
-     <script src="assets/js/owl.carousel.min.js"></script>
-     <script src="assets/js/slick-slider.js"></script>
-     <script src="assets/js/gsap.min.js"></script>
-     <script src="assets/js/ScrollTrigger.min.js"></script>
-     <script src="assets/js/Splitetext.js"></script>
-     <script src="assets/js/text-animation.js"></script>
-     <script src="assets/js/SmoothScroll.js"></script>
-     <script src="assets/js/jquery.lineProgressbar.js"></script>
-     <script src="assets/js/ripple-btn.js"></script>
-     <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fontawesome.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/Splitetext.js"></script>
+    <script src="assets/js/text-animation.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/ripple-btn.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      const items = document.querySelectorAll('#districtMenu .list-group-item');
+      const infos = document.querySelectorAll('.district-info');
+
+      items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const target = item.getAttribute('data-target');
+
+        infos.forEach(info => {
+          info.classList.remove('active');
+          if ('#' + info.id === target) info.classList.add('active');
+        });
+      });
+      });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      document.querySelectorAll('.mySwiper').forEach((el, i) => {
+        new Swiper(el, {
+          effect: 'coverflow', // or 'cube', 'fade', etc.
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: el.querySelector('.swiper-pagination'),
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          // optional:
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          loop: true
+        });
+      });
+    </script>
 </body>
 </html>

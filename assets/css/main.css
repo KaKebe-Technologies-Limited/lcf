@@ -6240,6 +6240,51 @@ a.header__search.header-search-btn p {
   border-radius: 240px;
   margin-top: 60px;
 }
+/* Make tab buttons wrap and center */
+.tab-header-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Style each button like a pill-shaped bar */
+.tab-header-all .nav-link {
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-header-all .nav-link.active {
+  background-color: #004080; /* Your theme color */
+  color: #fff;
+}
+
+.tab-header-all .nav-link:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* Optional: Stack vertically on very small screens */
+@media (max-width: 576px) {
+  .tab-header-all {
+    flex-direction: row;
+    align-items: center;
+    gap: 0rem;
+  }
+
+  .tab-header-all .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .about-tabs .tab-header-all {
     border-radius: 4px;
@@ -11159,6 +11204,9 @@ a.header__search.header-search-btn p {
   font-size: var(--f-fs-font-fs18);
   font-weight: var(--f-fw-blod);
   line-height: var(--f-fs-font-fs18);
+  color: #fff;
+}
+.hero1 .buttons .play-btn:hover {
   color: var(--ztc-bg-main-bg-1);
 }
 @media (max-width: 767px) {
