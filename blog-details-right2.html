@@ -24,144 +24,10 @@
 
      <!--=====JQUERY=======-->
      <script src="assets/js/jquery-3-7-1.min.js"></script>
-     <style>
-       .lifestyle-area {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #fff7f0, #ffe8d6);
-            position: relative;
-            overflow: hidden;
-        }
-        .lifestyle-area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/img/two.JPG') no-repeat center center/cover;
-            background-attachment: fixed;
-            opacity: 0.05;
-            z-index: 0;
-        }
-        .lifestyle-area .container {
-            position: relative;
-            z-index: 1;
-        }
-        .lifestyle-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .lifestyle-card:hover {
-            transform: translateY(-10px);
-        }
-        .lifestyle-img {
-            height: 400px;
-            object-fit: cover;
-            filter: brightness(100%) contrast(115%);
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-        .lifestyle-card:hover .lifestyle-img {
-            transform: scale(1.05);
-            filter: brightness(105%) contrast(120%);
-        }
-        .lifestyle-card .card-body {
-            padding: 25px;
-            text-align: center;
-        }
-        .lifestyle-card .card-title {
-            font-weight: 600;
-            color: #ff6f61;
-            font-size: 1.5rem;
-        }
-        .lifestyle-card .card-text {
-            color: #333;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .more-lifestyles {
-            padding: 60px 0;
-            background: #f8f9fa;
-        }
-        .lifestyle-box {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .lifestyle-box:hover {
-            transform: translateY(-10px);
-        }
-        .lifestyle-box img {
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .lifestyle-box h4 a {
-            color: #ff6f61;
-            text-decoration: none;
-        }
-        .btn-primary {
-            background-color: #ff6f61;
-            border-color: #ff6f61;
-            padding: 12px 40px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #e65b50;
-            border-color: #e65b50;
-            transform: translateY(-3px);
-        }
-        .share-form {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .share-form .form-control {
-            border-radius: 10px;
-            border: 1px solid #ff6f61;
-        }
-        .share-form .btn-primary {
-            width: 100%;
-        }
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-        .slide-in-left {
-            animation: slideInLeft 1s ease-in-out;
-        }
-        @media (max-width: 768px) {
-            .lifestyle-img {
-                height: 300px;
-            }
-            .lifestyle-card .card-title {
-                font-size: 1.3rem;
-            }
-            .lifestyle-card .card-text {
-                font-size: 0.9rem;
-            }
-            .lifestyle-box img {
-                height: 150px;
-            }
-        }
-     </style>
+    
 </head>
-<body class="body comon-body tg-heading-subheading animation-style3">
+
+<body   class="body comon-body bg-light tg-heading-subheading animation-style3">
 
 
   <!--=====progress END=======-->
@@ -301,21 +167,7 @@
               <i class="fa-solid fa-bars"></i>
             </div>
 
-            <!-- Contact and CTA Buttons (Desktop Only) -->
-            <!-- <div class="header1-buttons d-none d-lg-flex">
-              <div class="contact-btn">
-                <div class="icon">
-                  <img src="assets/img/icons/lango-contact-icon.png" alt="Contact Icon">
-                </div>
-                <div class="headding">
-                  <p>Contact Us</p>
-                  <a href="tel:+256123456789">+256 123 456 789</a>
-                </div>
-              </div>
-              <div class="button">
-                <a class="theme-btn1" href="error.html">Get Involved <span><i class="fa-solid fa-arrow-right"></i></span></a>
-              </div>
-            </div> -->
+          
           </div>
         </div>
       </div>
@@ -455,184 +307,177 @@
                   </div>
                 </section>
 
-
-                <div class="lifestyle-area">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-lg-10 mx-auto text-center">
-                              <h2 class="mb-3 text-primary slide-in-left">Living the Lango Way</h2>
-                              <p class="lead mb-5 fade-in">Across 15,570.7 km², 2.5 million Lango souls weave a vibrant tapestry of life. From campfires under starlit skies to the rhythm of festivals, discover the heartbeat of 149 clans.</p>
-                          </div>
-                      </div>
-                      <div class="row g-4">
-                          <!-- Campfires -->
-                          <div class="col-lg-12">
-                              <div class="lifestyle-card fade-in" style="animation-delay: 0.2s;">
-                                  <img src="assets/img/two.JPG" alt="Lango campfires under starlit skies" class="lifestyle-img img-fluid">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Campfires of Unity</h4>
-                                      <p class="card-text">By Otuke Hills, *wang tic* elders gather clans around glowing campfires, sharing tales of migration and heroism. These nights, filled with laughter and Okeme songs, bind Lango’s heart.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Fishing -->
-                          <div class="col-lg-6 col-md-6">
-                              <div class="lifestyle-card fade-in" style="animation-delay: 0.4s;">
-                                  <img src="assets/img/two.JPG" alt="Fishing on Lake Kwania with Lango fishermen" class="lifestyle-img img-fluid">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Fishing on Lake Kwania</h4>
-                                      <p class="card-text">At dawn, fishermen cast nets on Lake Kwania, their chants echoing as they haul fresh catches. This tradition, rooted in Lango’s lakes, feeds both body and community spirit.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Farming -->
-                          <div class="col-lg-6 col-md-6">
-                              <div class="lifestyle-card fade-in" style="animation-delay: 0.6s;">
-                                  <img src="assets/img/two.JPG" alt="Farming in Lango’s fertile fields" class="lifestyle-img img-fluid">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Farming the Fertile Lands</h4>
-                                      <p class="card-text">In Lango’s fields, families sow millet and cassava, working as one under the sun. Farming, a cornerstone of life, reflects resilience and the pride of feeding 2.5 million souls.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Festivities -->
-                          <div class="col-lg-12">
-                              <div class="lifestyle-card fade-in" style="animation-delay: 0.8s;">
-                                  <img src="assets/img/two.JPG" alt="Lango festivities with Okeme dances" class="lifestyle-img img-fluid">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Festivities of Joy</h4>
-                                      <p class="card-text">Lango’s festivals burst with Okeme and Abuda dances, uniting clans in Lira’s vibrant markets. From honoring John Akii Bua to celebrating harvests, these events pulse with pride.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Daily Life -->
-                          <div class="col-lg-12">
-                              <div class="lifestyle-card fade-in" style="animation-delay: 1s;">
-                                  <img src="assets/img/two.JPG" alt="Daily life in Lango’s villages" class="lifestyle-img img-fluid">
-                                  <div class="card-body">
-                                      <h4 class="card-title">The Rhythm of Daily Life</h4>
-                                      <p class="card-text">In villages, families weave bonds through shared meals of malakwang, market trades, and prayers to ancestors. Guided by *Won Nyaci*, Lango’s daily life blends tradition and community.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Share Experience -->
-                          <div class="col-lg-12">
-                              <div class="share-form fade-in" style="animation-delay: 1.2s;">
-                                  <h3 class="text-primary mb-4">Share Your Lango Experience</h3>
-                                  <form action="#">
-                                      <div class="row g-3">
-                                          <div class="col-lg-6">
-                                              <input type="text" class="form-control" placeholder="First Name">
-                                          </div>
-                                          <div class="col-lg-6">
-                                              <input type="text" class="form-control" placeholder="Last Name">
-                                          </div>
-                                          <div class="col-lg-6">
-                                              <input type="email" class="form-control" placeholder="Email">
-                                          </div>
-                                          <div class="col-lg-6">
-                                              <input type="tel" class="form-control" placeholder="Phone">
-                                          </div>
-                                          <div class="col-lg-12">
-                                              <input type="text" class="form-control" placeholder="Experience Title">
-                                          </div>
-                                          <div class="col-lg-12">
-                                              <textarea class="form-control" rows="5" placeholder="Share your Lango lifestyle story..."></textarea>
-                                          </div>
-                                          <div class="col-lg-12">
-                                              <button class="btn btn-primary">Submit Your Story <span><i class="fa-solid fa-arrow-right"></i></span></button>
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--===== LIFESTYLE AREA END =======-->
-          
-              <!--===== MORE LIFESTYLES AREA START =======-->
-              <div class="more-lifestyles">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-lg-6 m-auto text-center">
-                              <div class="heading2">
-                                  <h2>More Lango Lifestyles</h2>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="space30"></div>
-                      <div class="row g-4">
-                          <div class="col-lg-6">
-                              <div class="lifestyle-box fade-in" style="animation-delay: 0.2s;">
-                                  <img src="assets/img/two.JPG" alt="Lango markets bustling with trade" class="img-fluid">
-                                  <div class="heading2">
-                                      <div class="tags">
-                                          <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
-                                          <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Clan Elder</a>
-                                      </div>
-                                      <h4><a href="lifestyle-details.html">Bustling Markets</a></h4>
-                                      <div class="space16"></div>
-                                      <p>Lango’s markets in Lira hum with trade, from millet to crafts, fostering community and commerce.</p>
-                                      <div class="space16"></div>
-                                      <a href="lifestyle-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-6">
-                              <div class="lifestyle-box fade-in" style="animation-delay: 0.4s;">
-                                  <img src="assets/img/two.JPG" alt="Lango spirituality in village prayers" class="img-fluid">
-                                  <div class="heading2">
-                                      <div class="tags">
-                                          <a href="#" class="date"><img src="assets/img/icons/date.png" alt=""> 10/02/2024</a>
-                                          <a href="#" class="date outhor"><img src="assets/img/icons/user.png" alt=""> Clan Elder</a>
-                                      </div>
-                                      <h4><a href="lifestyle-details.html">Spiritual Connections</a></h4>
-                                      <div class="space16"></div>
-                                      <p>Prayers to ancestors and clan rituals guide Lango’s spiritual life, rooted in Barlonyo’s healing.</p>
-                                      <div class="space16"></div>
-                                      <a href="lifestyle-details.html" class="learn">Read More <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--===== MORE LIFESTYLES AREA END =======-->
-          
-              <div class="space100"></div>
-        <!--=====CTA AREA START=======-->
-
-        <div class="cta2">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 m-auto text-center">
-                <div class="heading2">
-                  <h2> We're Committed to Businesses</h2>
-                  <div class="space16"></div>
-                  <p>At TechXen IT Solutions, we're dedicated to delivering innovative technology solutions tailored to meet the unique needs of businesses like yours. </p>
-
-                  <div class="row">
-                    <div class="col-lg-8 m-auto">
-                      <div class="subscribe-form">
-                        <form action="#">
-                          <input type="email" placeholder="Enter Your Email">
-                          <div class="button">
-                            <button type="submit" class="theme-btn2">Subscribe <span><i class="fa-solid fa-arrow-right"></i></span></button>
-                          </div>
-                        </form>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!--===== LIFESTYLE SECTION START =======-->
+    <section class="py-5 bg-primary-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-dark">Living the Lango Way</h1>
+                <p class="lead text-muted col-md-8 mx-auto">Across 15,570.7 km², 2.5 million Lango souls weave a vibrant tapestry of life. From campfires under starlit skies to the rhythm of festivals, discover the heartbeat of 149 clans.</p>
             </div>
-          </div>
+            <!-- Carousel for Main Lifestyle Features -->
+            <div id="lifestyleCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Campfires -->
+                    <div class="carousel-item active">
+                        <div class="card border-0">
+                            <img src="assets/img/two.JPG" alt="Lango campfires under starlit skies" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold">Campfires of Unity</h4>
+                                <p class="card-text">By Otuke Hills, <em>wang tic</em> elders gather clans around glowing campfires, sharing tales of migration and heroism. These nights, filled with laughter and Okeme songs, bind Lango’s heart.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fishing -->
+                    <div class="carousel-item">
+                        <div class="card border-0">
+                            <img src="assets/img/two.JPG" alt="Fishing on Lake Kwania with Lango fishermen" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold">Fishing on Lake Kwania</h4>
+                                <p class="card-text">At dawn, fishermen cast nets on Lake Kwania, their chants echoing as they haul fresh catches. This tradition, rooted in Lango’s lakes, feeds both body and community spirit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Farming -->
+                    <div class="carousel-item">
+                        <div class="card border-0">
+                            <img src="assets/img/two.JPG" alt="Farming in Lango’s fertile fields" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold">Farming the Fertile Lands</h4>
+                                <p class="card-text">In Lango’s fields, families sow millet and cassava, working as one under the sun. Farming, a cornerstone of life, reflects resilience and the pride of feeding 2.5 million souls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#lifestyleCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#lifestyleCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Grid for Additional Lifestyle Features -->
+            <div class="row g-4">
+                <!-- Festivities -->
+                <div class="col-md-6">
+                    <div class="card border-0 h-100 bg-white">
+                        <img src="assets/img/two.JPG" alt="Lango festivities with Okeme dances" class="card-img-top">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Festivities of Joy</h4>
+                            <p class="card-text">Lango’s festivals burst with Okeme and Abuda dances, uniting clans in Lira’s vibrant markets. From honoring John Akii Bua to celebrating harvests, these events pulse with pride.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Daily Life -->
+                <div class="col-md-6">
+                    <div class="card border-0 h-100 bg-white">
+                        <img src="assets/img/two.JPG" alt="Daily life in Lango’s villages" class="card-img-top">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">The Rhythm of Daily Life</h4>
+                            <p class="card-text">In villages, families weave bonds through shared meals of malakwang, market trades, and prayers to ancestors. Guided by <em>Won Nyaci</em>, Lango’s daily life blends tradition and community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Share Experience Form -->
+            <div class="card border-0 mt-5 col-lg-6 mx-auto bg-white">
+                <div class="card-body p-4">
+                    <h3 class="text-dark mb-4">Share Your Lango Experience</h3>
+                    <form action="#">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Phone">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Experience Title">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="4" placeholder="Share your Lango lifestyle story..."></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-warning text-white">Submit Your Story <i class="fa-solid fa-arrow-right ms-1"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+    </section>
+    <!--===== LIFESTYLE SECTION END =======-->
 
-        <!--=====CTA AREA END=======-->
-
+    <!--===== MORE LIFESTYLE SECTION START =======-->
+    <section class="py-5 bg-dark-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark">More Lango Lifestyles</h2>
+            </div>
+            <!-- Accordion for More Lifestyles -->
+            <div class="accordion col-lg-8 mx-auto" id="moreLifestylesAccordion">
+                <!-- Bustling Markets -->
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#marketsCollapse" aria-expanded="true" aria-controls="marketsCollapse">
+                            <strong>Bustling Markets</strong>
+                        </button>
+                    </h2>
+                    <div id="marketsCollapse" class="accordion-collapse collapse show" data-bs-parent="#moreLifestylesAccordion">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="assets/img/two.JPG" alt="Lango markets bustling with trade" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="mb-2">
+                                        <a href="#" class="text-warning text-decoration-none me-3"><img src="assets/img/icons/date.png" alt="" width="14"> 10/02/2024</a>
+                                        <a href="#" class="text-warning text-decoration-none"><img src="assets/img/icons/user.png" alt="" width="14"> Clan Elder</a>
+                                    </div>
+                                    <p>Lango’s markets in Lira hum with trade, from millet to crafts, fostering community and commerce.</p>
+                                    <a href="lifestyle-details.html" class="text-warning text-decoration-none">Read More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Spiritual Connections -->
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#spiritualCollapse" aria-expanded="false" aria-controls="spiritualCollapse">
+                            <strong>Spiritual Connections</strong>
+                        </button>
+                    </h2>
+                    <div id="spiritualCollapse" class="accordion-collapse collapse" data-bs-parent="#moreLifestylesAccordion">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="assets/img/two.JPG" alt="Lango spirituality in village prayers" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="mb-2">
+                                        <a href="#" class="text-warning text-decoration-none me-3"><img src="assets/img/icons/date.png" alt="" width="14"> 10/02/2024</a>
+                                        <a href="#" class="text-warning text-decoration-none"><img src="assets/img/icons/user.png" alt="" width="14"> Clan Elder</a>
+                                    </div>
+                                    <p>Prayers to ancestors and clan rituals guide Lango’s spiritual life, rooted in Barlonyo’s healing.</p>
+                                    <a href="lifestyle-details.html" class="text-warning text-decoration-none">Read More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== MORE LIFESTYLE SECTION END =======-->
+    
         <!--===== FOOTER AREA START =======-->
        <div class="footer1 _relative">
         <div class="container">
@@ -740,7 +585,7 @@
           </div>
         </div>
        </div>
-   <!--===== FOOTER AREA END =======-->
+       <!--===== FOOTER AREA END =======-->
 
             <script src="assets/js/bootstrap.min.js"></script>
             <script src="assets/js/aos.js"></script>
