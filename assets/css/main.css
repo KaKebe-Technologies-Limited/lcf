@@ -17061,7 +17061,8 @@ a.header__search.header-search-btn p {
 }
 .blog .blog2-box .image {
   border-radius: 7px;
-  overflow: hidden;
+  overflow: hidden;/* 
+  max-height: 450px; */
 }
 .blog .blog2-box .image img {
   width: 100%;
