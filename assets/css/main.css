@@ -505,6 +505,14 @@ img {
   max-height: 100%;
 }
 
+.site-logo img,
+.logo-m img,
+.footer-logo img {
+  max-height: 96px;
+  width: auto;
+  height: auto;
+}
+
 a,
 a:hover,
 a:focus {
