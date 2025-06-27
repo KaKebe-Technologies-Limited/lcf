@@ -326,7 +326,7 @@ ANIMATION AREA CSS
 }
 
 .about-image .image2 {
-  position: absolute;
+  position: relative;
   top: 20%;
   right: 10%;
   width: 50%;
@@ -338,6 +338,12 @@ ANIMATION AREA CSS
   bottom: 20px;
   left: 20px;
   z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .icon-box {
+    display: none;
+  }
 }
 
 .list li i {
@@ -1790,6 +1796,66 @@ body.body {
 .mb-30 {
   margin-bottom: 30px;
 }
+/* 
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1050;
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.mobile-sidebar.open {
+  right: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1199.98px) {
+  .main-menu-ex {
+    display: none !important;
+  }
+
+  .mobile-nav-icon,
+  .mobile-sidebar {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mobile-sidebar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .mobile-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100%;
+    background: white;
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+  }
+
+  .mobile-sidebar.open {
+    right: 0;
+  }
+} */
+
+@media (max-width: 991px) {
+  .mobile-sidebar {
+    display: none;
+  }
+  .mobile-sidebar.mobile-menu-active {
+    display: block;
+  }
+}
 
 .mobile-sidebar .single-footer h3 {
   color: #ffffff;
@@ -2994,7 +3060,7 @@ body.body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .reveal {
     position: relative;
     display: inline-flex;
@@ -5455,7 +5521,7 @@ a.header__search.header-search-btn p {
   position: relative;
 }
 .about1 .about-image .image1 {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
 }
@@ -23689,4 +23755,15 @@ li.has-dropdown1 span {
 
 .dark.single-footer-items h3 {
   color: var(--ztc-bg-main-bg-4);
+}
+
+@media(max-width: 991.98px) {
+  .card .card-body {
+    flex-direction: column;
+  }
+}
+
+.tab-content#pills-tabContent .image img {
+  width: 100%;
+  height: auto;
 }
